@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sihirli Nar Ağacı — Masal Önizlemesi</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Sihirli Nar Ağacı</h1>
+      <p class="byline">Yazan: <strong> Anonim </strong> — Kısa önizleme</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card hero">
+      <img src="assets/hero.svg" alt="Sihirli Nar Ağacı illüstrasyonu" class="hero-img" />
+      <article>
+        <h2>Önizleme</h2>
+        <p id="preview-text">
+          Küçük bir köyün kıyısında, dalları kırmızı kırmızı meyvelerle dolu, kimsenin
+          görmediği bir nar ağacı varmış. Bu ağacın meyvesini yiyen, dileğinin birer parça
+          gerçek olacağını söylerlermiş — ama ağacın sırrını yalnızca kalbi cesur olanlar
+          öğrenebilirmiş.
+        </p>
+
+        <div class="controls">
+          <button id="btn-speak" class="btn">Metni Oku (Sesli Anlatım)</button>
+          <button id="btn-full" class="btn primary" onclick="location.href='full-story.html'">Tamamını Oku</button>
+          <button id="btn-copy" class="btn">Sayfa Bağlantısını Kopyala</button>
+        </div>
+
+        <div class="settings">
+          <label>Yazı büyüt: <button id="inc-font">A+</button> <button id="dec-font">A-</button></label>
+          <label><input type="checkbox" id="dark-toggle"> Koyu mod</label>
+        </div>
+
+        <div class="audio-upload">
+          <label for="bg-file">Arka plan müziği (opsiyonel):</label>
+          <input id="bg-file" type="file" accept="audio/*" />
+          <button id="bg-play" class="btn">Çal</button>
+          <button id="bg-stop" class="btn">Durdur</button>
+        </div>
+      </article>
+    </section>
+
+    <aside class="card info">
+      <h3>Hızlı Notlar</h3>
+      <ul>
+        <li>"Tamamını Oku" bağlantısı tam masalı gösterir.</li>
+      </ul>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>Bu proje eğitim amaçlıdır — VS Code + Live Server ile açabilirsiniz.</small>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
