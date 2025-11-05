@@ -5,98 +5,189 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hareketli Karakterler</title>
   <style>
+    /* Sayfanın genel arka plan rengi, hizalama ve yazı tipi ayarları */
     body {
-      background-color: #f8f1c3;
+      background-color: #f8f1c3; /* açık sarı arka plan */
+      height: 100vh; /* sayfa yüksekliği kadar alan */
+      margin: 0;
       display: flex;
-      justify-content: center;
-      align-items: end;
-      gap: 30px;
-      height: 100vh;
-      font-family: "Comic Sans MS", sans-serif;
+      justify-content: center; /* yatay ortalama */
+      align-items: center; /* dikey ortalama */
+      font-family: "Comic Sans MS", sans-serif; /* eğlenceli yazı tipi */
     }
 
+    /* Tüm karakterleri yan yana yerleştiren kapsayıcı */
+    .container {
+      display: flex;
+      gap: 50px; /* karakterler arası boşluk */
+    }
+
+    /* Ortak karakter (top) biçimlendirmesi */
     .ball {
       width: 120px;
       height: 120px;
-      border-radius: 50%;
+      border-radius: 50%; /* daire formu */
       position: relative;
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-direction: column;
       color: #000;
       font-size: 14px;
+      text-align: center;
     }
 
-    /* 1. Yukarı-aşağı hareket eden */
+    /* Gözlerin bulunduğu satır (iki küçük siyah daire içerir) */
+    .eyes {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 5px;
+    }
+
+    /* Tek bir göz */
+    .eye {
+      width: 10px;
+      height: 10px;
+      background-color: black;
+      border-radius: 50%;
+    }
+
+    /* Ağız şekli (her top için farklı boyutlarda olacak) */
+    .mouth {
+      width: 50px;
+      height: 20px;
+      background-color: black;
+      border-radius: 20px;
+    }
+
+    /* 1️⃣ Yukarı-aşağı zıplayan karakter */
     .ball1 {
       background-color: purple;
       animation: upDown 2s ease-in-out infinite;
     }
     @keyframes upDown {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-50px); }
+      0%, 100% { transform: translateY(0); } /* başlangıç ve bitiş konumu */
+      50% { transform: translateY(-50px); }  /* yukarı çıkma hareketi */
     }
 
-    /* 2. Büyüyüp küçülen ve rengi değişen */
+    /* 2️⃣ Büyüyüp küçülen ve rengi değişen karakter */
     .ball2 {
       background-color: tomato;
       animation: growChange 3s ease-in-out infinite;
     }
     @keyframes growChange {
-      0% { transform: scale(1); background-color: tomato; }
-      50% { transform: scale(1.3); background-color: gold; }
-      100% { transform: scale(1); background-color: tomato; }
+      0% { transform: scale(1); background-color: tomato; } /* normal boy */
+      50% { transform: scale(1.3); background-color: gold; } /* büyür ve renk değişir */
+      100% { transform: scale(1); background-color: tomato; } /* geri döner */
     }
 
-    /* 3. Transparanlığı değişen */
+    /* 3️⃣ Transparanlığı değişen karakter */
     .ball3 {
       background-color: palevioletred;
       animation: fade 3s ease-in-out infinite;
     }
     @keyframes fade {
-      0% { opacity: 1; }
-      50% { opacity: 0.3; }
-      100% { opacity: 1; }
+      0% { opacity: 1; }   /* tamamen görünür */
+      50% { opacity: 0.3; } /* yarı saydam */
+      100% { opacity: 1; }  /* tekrar görünür */
     }
 
-    /* 4. Sağa sola giden gelen */
+    /* 4️⃣ Sağa sola giden karakter */
     .ball4 {
       background-color: cornflowerblue;
       animation: leftRight 2.5s ease-in-out infinite;
     }
     @keyframes leftRight {
-      0%, 100% { transform: translateX(0); }
-      50% { transform: translateX(70px); }
+      0%, 100% { transform: translateX(0); }  /* başlangıç pozisyonu */
+      50% { transform: translateX(70px); }   /* sağa hareket */
     }
 
-    /* 5. Dönen */
+    /* 5️⃣ Dönen karakter */
     .ball5 {
       background-color: mediumseagreen;
       animation: rotate 3s linear infinite;
     }
     @keyframes rotate {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+      0% { transform: rotate(0deg); }     /* başlangıç açısı */
+      100% { transform: rotate(360deg); } /* tam tur döner */
     }
 
-    /* Gölge efekti */
+    /* İsim yazısının biçimi */
+    .name {
+      margin-top: 10px;
+      font-size: 13px;
+    }
+
+    /* Topların altına gölge efekti */
     .ball::after {
       content: "";
       position: absolute;
-      bottom: -10px;
+      bottom: -12px;
       width: 70%;
       height: 10px;
-      background: rgba(0, 0, 0, 0.2);
+      background: rgba(0, 0, 0, 0.25);
       border-radius: 50%;
       filter: blur(3px);
+      left: 15%;
     }
   </style>
 </head>
 <body>
-  <div class="ball ball1">Yukarı-Aşağı</div>
-  <div class="ball ball2">Büyü-Renk</div>
-  <div class="ball ball3">Transparan</div>
-  <div class="ball ball4">Sağa-Sola</div>
-  <div class="ball ball5">Dönen</div>
+
+  <!-- Tüm karakterlerin bulunduğu kapsayıcı -->
+  <div class="container">
+
+    <!-- 1️⃣ Yukarı-aşağı hareket eden top -->
+    <div class="ball ball1">
+      <div class="eyes">
+        <div class="eye"></div>
+        <div class="eye"></div>
+      </div>
+      <div class="mouth" style="border-radius: 0 0 30px 30px; height:25px;"></div>
+      <div class="name">Yukarı-Aşağı</div>
+    </div>
+
+    <!-- 2️⃣ Büyüyüp küçülen ve rengi değişen top -->
+    <div class="ball ball2">
+      <div class="eyes">
+        <div class="eye"></div>
+        <div class="eye"></div>
+      </div>
+      <div class="mouth" style="width:40px;height:10px;"></div>
+      <div class="name">Büyü-Renk</div>
+    </div>
+
+    <!-- 3️⃣ Transparan değeri değişen top -->
+    <div class="ball ball3">
+      <div class="eyes">
+        <div class="eye"></div>
+        <div class="eye"></div>
+      </div>
+      <div class="mouth" style="width:45px;height:12px;border-radius:15px;"></div>
+      <div class="name">Transparan</div>
+    </div>
+
+    <!-- 4️⃣ Sağa sola giden top -->
+    <div class="ball ball4">
+      <div class="eyes">
+        <div class="eye"></div>
+        <div class="eye"></div>
+      </div>
+      <div class="mouth" style="width:40px;height:10px;border-radius:15px;"></div>
+      <div class="name">Sağa-Sola</div>
+    </div>
+
+    <!-- 5️⃣ Dönen top -->
+    <div class="ball ball5">
+      <div class="eyes">
+        <div class="eye"></div>
+        <div class="eye"></div>
+      </div>
+      <div class="mouth" style="width:50px;height:20px;border-radius:30px;"></div>
+      <div class="name">Dönen</div>
+    </div>
+  </div>
+
 </body>
 </html>
