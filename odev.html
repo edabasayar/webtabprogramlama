@@ -1,61 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<title>How To Use CSS Animation Fill Mode Property With HTML</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
 </head>
 <style>
-@keyframes renkDegisim
-{ from 
-	{background-color: white;}
-to 
-	{background-color: black;} }
-    div
- {	width: 100px;
-    	height: 100px; 
-	background-color: red; 
-	animation-name: renkDegisim; 
-	animation-duration: 4s; 
+body {
+background: #ff944d;
 }
-/* Animasyon Kodu*/@keyframes kutu1 {  0%   {background-color: red;}  25%  {background-color: yellow;}  50%  {background-color: blue;}  100% {background-color: green;}}
-
-
-div {  width: 100px;  height: 100px;  background-color: red;  animation-name: kutu1;  animation-duration: 4s;}
-
-.d1{
-border-radius: 20px;;
-}
-div {
+.div1 {
 width: 100px;
 height: 100px;
-background-color: red;
+background: red;
 position: relative;
-animation-name: anime1;
-animation-duration: 4s;
-animation-iteration-count: infinite;
-margin:5px;
+animation-name: example;
+animation-duration: 3s;
+animation-delay: 2s;
+animation-fill-mode: both;
 }
-<div class="d1"></div>
-<div></div>
-<div></div>
-<div></div>
-
-div { 
-animation-name: anime1; 
-animation-duration: 5s; 
-animation-timing-function: linear; 
-animation-delay: 2s; 
-animation-iteration-count: infinite; 
-animation-direction: alternate; 
+@keyframes example {
+from {top: 0px; background-color: #b300b3;}
+to {top: 200px; background-color: blue;}
 }
-
-
-div { animation: anime1 5s linear 2s infinite alternate; }
-
+.div2 {
+width: 100px;
+height: 100px;
+background: red;
+position: relative;
+animation-name: example2;
+animation-duration: 3s;
+animation-delay: 2s;
+animation-fill-mode: backwards;
+}
+@keyframes example2 {
+from {top: 0px; background-color: yellow;}
+to {top: 200px;}
+}
+.div3 {
+width: 100px;
+height: 100px;
+background: red;
+position: relative;
+animation-name: example3;
+animation-duration: 3s;
+animation-fill-mode: forwards;
+}
+@keyframes example3 {
+from {top: 0px;}
+to {top: 200px; background-color: #b300b3;}
+}
 </style>
-
 <body>
-    
+<br/><br/>
+<div class="container">
+<br>
+<div class="text-center">
+<h1 id="color" style="color: white;">CSS Animation Fill Mode Property With HTML</h1>
+</div>
+<br>
+<div class="col-md-12">
+<div class="div1"></div>
+<div class="div2"></div>
+<div class="div3"></div>
+</div>
+</div>
 </body>
 </html>
