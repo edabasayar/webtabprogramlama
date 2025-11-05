@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+@keyframes renkDegisim
+{ from 
+	{background-color: white;}
+to 
+	{background-color: black;} }
+    div
+ {	width: 100px;
+    	height: 100px; 
+	background-color: red; 
+	animation-name: renkDegisim; 
+	animation-duration: 4s; 
+}
+/* Animasyon Kodu*/@keyframes kutu1 {  0%   {background-color: red;}  25%  {background-color: yellow;}  50%  {background-color: blue;}  100% {background-color: green;}}
+
+
+div {  width: 100px;  height: 100px;  background-color: red;  animation-name: kutu1;  animation-duration: 4s;}
+
+.d1{
+border-radius: 20px;;
+}
+div {
+width: 100px;
+height: 100px;
+background-color: red;
+position: relative;
+animation-name: anime1;
+animation-duration: 4s;
+animation-iteration-count: infinite;
+margin:5px;
+}
+<div class="d1"></div>
+<div></div>
+<div></div>
+<div></div>
+
+div { 
+animation-name: anime1; 
+animation-duration: 5s; 
+animation-timing-function: linear; 
+animation-delay: 2s; 
+animation-iteration-count: infinite; 
+animation-direction: alternate; 
+}
+
+
+div { animation: anime1 5s linear 2s infinite alternate; }
+
+</style>
+
+<body>
+    
+</body>
+</html>
