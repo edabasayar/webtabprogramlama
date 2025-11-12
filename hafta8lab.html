@@ -1,95 +1,99 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
   <title>Miyazaki Animeleri</title>
   <meta charset="utf-8">
-  <!-- Viewport ayarı, responsive yapı için kritiktir -->
   <meta name="viewport" content="width=device-width, initial-scale=1"> 
   
-  <!-- Bootstrap 4.6.2 CSS ve JS CDN linkleri -->
+  <!-- Bootstrap 4.6.2 CSS ve JS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"> 
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script> 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
   
   <style>
-    /* Kartlara biraz boşluk eklemek için özel stil (opsiyonel) */
     .card {
       margin-bottom: 20px;
+    }
+    .card-img-top {
+      height: 200px;           /* resim yüksekliği */
+      object-fit: cover;       /* taşan kısmı kırpma */
     }
   </style>
 </head>
 <body>
 
-<!-- container-fluid tüm genişliği kullanır -->
 <div class="container-fluid"> 
-<h2 class="text-center display-4 my-4">Miyazaki Animeleri</h2> 
-<div class="row"> 
+  <h2 class="text-center display-4 my-4">Miyazaki Animeleri</h2> 
+  <div class="row"> 
 
-  <!-- Başlık: Kart 1 -->
-  <!-- Tüm boyutlar için gerekli sütun sınıfları tanımlanmıştır: col-12 (XS), col-sm-6 (SM), col-md-4 (MD), col-lg-2 (LG) -->
-  <div class="card col-12 col-sm-6 col-md-4 col-lg-2"> 
-    <div class="card-header bg-primary text-white">Yürüyen Şato</div> 
-    <div class="card-body">
-      <h5 class="card-title">Kart İçeriği</h5>
-      <p class="card-text">Yürüyen Şato, kendisine yapılan büyünün etkisini yok etmeye çalışan genç bir kızın hikayesini anlatıyor.</p>
+    <!-- Kart 1 -->
+    <div class="card col-12 col-sm-6 col-md-4 col-lg-2"> 
+      <div class="card-header bg-primary text-white">Yürüyen Şato</div>
+      <img src="https://upload.wikimedia.org/wikipedia/en/a/a0/Howls-moving-castleposter.jpg" class="card-img-top" alt="Yürüyen Şato">
+      <div class="card-body">
+        <h5 class="card-title">Kart İçeriği</h5>
+        <p class="card-text">Yürüyen Şato, kendisine yapılan büyünün etkisini yok etmeye çalışan genç bir kızın hikayesini anlatıyor.</p>
+      </div>
+      <div class="card-footer text-muted">Açıklama</div> 
     </div>
-    <div class="card-footer text-muted">Açıklama</div> 
-  </div>
-  
-  <!-- Kart 2 -->
-  <div class="card col-12 col-sm-6 col-md-4 col-lg-2">
-    <div class="card-header bg-success text-white">Komşum Totoro</div> 
-    <div class="card-body">
-      <h5 class="card-title">Kart İçeriği</h5>
-      <p class="card-text">Komşum Totoro'da anneleri, isimlendirmeyen ve uzun süreli bir hastalığa yakalandığında ona daha yakın olmak için yattığı hastanenin yakınındaki eski bir eve taşınmak isteyen iki küçük kız, bir profesör olan babalarını da ikna edip bu kırsal yere taşınırlar. Küçük kızlar Satsuki ve Mei zamanla evin içerisinde onlarla ...</p>
+
+    <!-- Kart 2 -->
+    <div class="card col-12 col-sm-6 col-md-4 col-lg-2">
+      <div class="card-header bg-success text-white">Komşum Totoro</div> 
+      <img src="https://upload.wikimedia.org/wikipedia/en/0/0b/My_Neighbor_Totoro_-_Tonari_no_Totoro_%28Movie_Poster%29.jpg" class="card-img-top" alt="Komşum Totoro">
+      <div class="card-body">
+        <h5 class="card-title">Kart İçeriği</h5>
+        <p class="card-text">Komşum Totoro'da anneleri hastayken iki küçük kız kardeş, doğanın ruhlarıyla karşılaştıkları fantastik bir dünyaya adım atar.</p>
+      </div>
+      <div class="card-footer text-muted">Açıklama</div>
     </div>
-    <div class="card-footer text-muted">Açıklama</div>
-  </div>
-  
-  <!-- Kart 3 -->
-  <div class="card col-12 col-sm-6 col-md-4 col-lg-2">
-    <div class="card-header bg-warning text-dark">Gökteki Kale</div>
-    <div class="card-body">
-      <h5 class="card-title">Kart İçeriği</h5>
-      <p class="card-text">Günümüzden uzak bir gelecekte geçen filmde insanoğlu gökyüzünde uçan şehirler inşa etmiş, burada yaşamaya başlamıştır. Bu şehirler büyük bir felaket sonrasında yerle bir olduğunda hayatta kalan insanlar yaşamlarını devam ettirebilmek için yeryüzüne inmek zorunda kalmıştır. Gökyüzünde kalan son kişi ise ...</p>
+
+    <!-- Kart 3 -->
+    <div class="card col-12 col-sm-6 col-md-4 col-lg-2">
+      <div class="card-header bg-warning text-dark">Gökteki Kale</div>
+      <img src="https://upload.wikimedia.org/wikipedia/en/4/46/Castle_in_the_Sky_%281986%29.png" class="card-img-top" alt="Gökteki Kale">
+      <div class="card-body">
+        <h5 class="card-title">Kart İçeriği</h5>
+        <p class="card-text">Gökyüzünde kaybolmuş bir kaleyi bulmak için yola çıkan iki çocuğun efsanevi macerası.</p>
+      </div>
+      <div class="card-footer text-muted">Açıklama</div>
     </div>
-    <div class="card-footer text-muted">Açıklama</div>
-  </div>
-  
-  <!-- Kart 4 -->
-  <div class="card col-12 col-sm-6 col-md-4 col-lg-2">
-    <div class="card-header bg-danger text-white">Ruhların Kaçışı</div> 
-    <div class="card-body">
-      <h5 class="card-title">Kart İçeriği</h5>
-      <p class="card-text">Ruhların Kaçışı, Japon animasyon üstadı Hayao Miyazaki’nin en değerli yapıtlarından biri. Film, küçük Chihiro ve ailesinin yeni bir kasabaya taşınmalarıyla açılır. Yolculuk esnasında yolda gördükleri bir tünele dikkat eden aile, tünelin içerisinden geçtiklerinde karşılaştıkları fantastik dünyanın içerisinde ...
-</p>
+
+    <!-- Kart 4 -->
+    <div class="card col-12 col-sm-6 col-md-4 col-lg-2">
+      <div class="card-header bg-danger text-white">Ruhların Kaçışı</div> 
+      <img src="https://upload.wikimedia.org/wikipedia/en/3/30/Spirited_Away_poster.JPG" class="card-img-top" alt="Ruhların Kaçışı">
+      <div class="card-body">
+        <h5 class="card-title">Kart İçeriği</h5>
+        <p class="card-text">Chihiro, ailesiyle birlikte gizemli bir dünyaya geçer ve büyücü Yubaba'nın hizmetinde kalır. Gerçek dünyaya dönebilmek için cesaretini toplaması gerekir.</p>
+      </div>
+      <div class="card-footer text-muted">Açıklama</div>
     </div>
-    <div class="card-footer text-muted">Açıklama</div>
-  </div>
-  
-  <!-- Kart 5 -->
-  <div class="card col-12 col-sm-6 col-md-4 col-lg-2">
-    <div class="card-header bg-info text-white">Prenses Mononoke</div> 
-    <div class="card-body">
-      <h5 class="card-title">Kart İçeriği</h5>
-      <p class="card-text">Prenses Mononoke, Ashitaka'nın maceralarını anlatıyor. Huzurlu bir şekilde yaşamını devam ettiren Ashitaka, bir gün ormandan gelen bir kötülüğün farkına varır. Orman Tanrısı, tüm tavizsizliğiyle ve sınırsız gücüyle, temas ettiği her varlığı yıkarak yoluna devam etmektedir. Küçük bir kızı kurtarmak için Orman ...</p>
+
+    <!-- Kart 5 -->
+    <div class="card col-12 col-sm-6 col-md-4 col-lg-2">
+      <div class="card-header bg-info text-white">Prenses Mononoke</div> 
+      <img src="https://upload.wikimedia.org/wikipedia/en/0/0c/Princess_Mononoke_Japanese_poster.png" class="card-img-top" alt="Prenses Mononoke">
+      <div class="card-body">
+        <h5 class="card-title">Kart İçeriği</h5>
+        <p class="card-text">Ashitaka, doğayla insan arasındaki savaşı durdurmaya çalışırken Mononoke adlı savaşçı prensesle tanışır.</p>
+      </div>
+      <div class="card-footer text-muted">Açıklama</div>
     </div>
-    <div class="card-footer text-muted">Açıklama</div>
-  </div>
-  
-  <!-- Kart 6 -->
-  <div class="card col-12 col-sm-6 col-md-4 col-lg-2">
-    <div class="card-header bg-secondary text-white">Küçük Denizkızı Ponyo</div> 
-    <div class="card-body">
-      <h5 class="card-title">Kart İçeriği</h5>
-      <p class="card-text">İnsani, insani olduğu kadar çevreci, sımsıcak bir animasyon olan Küçük Denizkızı Ponyo, bu sanatın büyük ustası Miyazaki tarafından beyazperde'ye aktarıldı. Küçük ve sevimli bir Japon balığı olan Ponyo'nun en büyük hayali insan olmaktır. Bu umutsuz hayali onu maceradan maceraya sürükleyecektir. Bu esnada beş yaşındaki ...
-</p> 
+
+    <!-- Kart 6 -->
+    <div class="card col-12 col-sm-6 col-md-4 col-lg-2">
+      <div class="card-header bg-secondary text-white">Küçük Denizkızı Ponyo</div> 
+      <img src="https://upload.wikimedia.org/wikipedia/en/9/9d/Ponyo_%282008%29.png" class="card-img-top" alt="Küçük Denizkızı Ponyo">
+      <div class="card-body">
+        <h5 class="card-title">Kart İçeriği</h5>
+        <p class="card-text">İnsan olmayı hayal eden sevimli balık Ponyo’nun maceraları sıcak bir dostluk öyküsüne dönüşür.</p>
+      </div>
+      <div class="card-footer text-muted">Açıklama</div>
     </div>
-    <div class="card-footer text-muted">Açıklama</div>
+
   </div>
-  
-</div>
 </div>
 
 </body>
