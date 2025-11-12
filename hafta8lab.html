@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Responsive Kart Düzeni</title>
+  <meta charset="utf-8">
+  <!-- Viewport ayarı, responsive yapı için kritiktir -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"> [2, 5, 9]
+  
+  <!-- Bootstrap 4.6.2 CSS ve JS CDN linkleri -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"> [5-7]
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script> [5-7]
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script> [5-7]
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script> [5-7]
+  
+  <style>
+    /* Kartlara biraz boşluk eklemek için özel stil (opsiyonel) */
+    .card {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- container-fluid tüm genişliği kullanır -->
+<div class="container-fluid"> [7]
+<h2 class="text-center display-4 my-4">6 Kart Responsive Düzen</h2> [10]
+<div class="row"> [4, 7]
+
+  <!-- Başlık: Kart 1 -->
+  <!-- Tüm boyutlar için gerekli sütun sınıfları tanımlanmıştır: col-12 (XS), col-sm-6 (SM), col-md-4 (MD), col-lg-2 (LG) -->
+  <div class="card col-12 col-sm-6 col-md-4 col-lg-2"> [2, 4, 8]
+    <div class="card-header bg-primary text-white">Kart 1 Başlık</div> [7, 10]
+    <div class="card-body">
+      <h5 class="card-title">Kart İçeriği</h5>
+      <p class="card-text">Bu kart XS'te 1, SM'de 2, MD'de 3, LG'de 6'lı sırada görünür.</p>
+    </div>
+    <div class="card-footer text-muted">Açıklama</div> [7]
+  </div>
+  
+  <!-- Kart 2 -->
+  <div class="card col-12 col-sm-6 col-md-4 col-lg-2">
+    <div class="card-header bg-success text-white">Kart 2 Başlık</div> [10]
+    <div class="card-body">
+      <h5 class="card-title">Kart İçeriği</h5>
+      <p class="card-text">Bu kart mobil uyumlu (responsive) bir örnektir.</p>
+    </div>
+    <div class="card-footer text-muted">Açıklama</div>
+  </div>
+  
+  <!-- Kart 3 -->
+  <div class="card col-12 col-sm-6 col-md-4 col-lg-2">
+    <div class="card-header bg-warning text-dark">Kart 3 Başlık</div> [10]
+    <div class="card-body">
+      <h5 class="card-title">Kart İçeriği</h5>
+      <p class="card-text">Bootstrap grid sistemi 12 sütun kullanır.</p>
+    </div>
+    <div class="card-footer text-muted">Açıklama</div>
+  </div>
+  
+  <!-- Kart 4 -->
+  <div class="card col-12 col-sm-6 col-md-4 col-lg-2">
+    <div class="card-header bg-danger text-white">Kart 4 Başlık</div> [10]
+    <div class="card-body">
+      <h5 class="card-title">Kart İçeriği</h5>
+      <p class="card-text">6 kart, büyük ekranda 6'lı sıra oluşturur.</p>
+    </div>
+    <div class="card-footer text-muted">Açıklama</div>
+  </div>
+  
+  <!-- Kart 5 -->
+  <div class="card col-12 col-sm-6 col-md-4 col-lg-2">
+    <div class="card-header bg-info text-white">Kart 5 Başlık</div> [10]
+    <div class="card-body">
+      <h5 class="card-title">Kart İçeriği</h5>
+      <p class="card-text">Bu kartlar `col-lg-2` sınıfına sahiptir.</p>
+    </div>
+    <div class="card-footer text-muted">Açıklama</div>
+  </div>
+  
+  <!-- Kart 6 -->
+  <div class="card col-12 col-sm-6 col-md-4 col-lg-2">
+    <div class="card-header bg-secondary text-white">Kart 6 Başlık</div> [10]
+    <div class="card-body">
+      <h5 class="card-title">Kart İçeriği</h5>
+      <p class="card-text">Lab Görevi 2'deki şartlar yerine getirildi.</p> [3]
+    </div>
+    <div class="card-footer text-muted">Açıklama</div>
+  </div>
+  
+</div>
+</div>
+
+</body>
+</html>
