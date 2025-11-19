@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Hafta 9 Lab Görevi</title>
+    <!-- Harici CSS veya Dahili CSS kullanılabilir. Aşağıdaki stil kodları dahili CSS'tir [2]. -->
+    <style>
+        /* Gizlenen resimler için temel stil */
+        .toggle-img {
+            width: 150px;
+            height: auto;
+            margin: 10px;
+            border: 2px solid #333;
+        }
+        
+        /* Rastgele seçilen resim için ID seçici kullanılır [3] */
+        #random_image {
+            width: 300px;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border: 5px solid red;
+        }
+
+        .button-container {
+            margin: 20px 0;
+            text-align: center;
+        }
+        .button-container button {
+            padding: 10px 15px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<!-- Body yüklendiğinde, initializePage() fonksiyonu çalıştırılır (onload olayı) [4] -->
+<body onload="initializePage()">
+
+    <!-- Başlık öğesi. ID kullanılarak JS ile içeriği değiştirilebilir (document.getElementById("ana_metin").innerHTML) [5]. -->
+    <h1 id="ana_metin" style="text-align: center;">JavaScript Lab Görevi</h1>
+    <p style="text-align: center;">Bu sayfa her yenilendiğinde arka plan rengi ve rastgele resim değişecektir.</p>
+
+    <!-- B. 10 farklı resim içinden rastgele seçilen resmin gösterileceği alan -->
+    <img id="random_image" alt="Rastgele Seçilen Resim">
+
+    <hr>
+    
+    <!-- C. Göster/Gizle Butonları -->
+    <div class="button-container">
+        <!-- Butona tıklandığında (onclick) [5], toggleImage fonksiyonu çağrılır [6] -->
+        <button onclick="toggleImage('img1')">Resim 1 Göster/Gizle</button>
+        <button onclick="toggleImage('img2')">Resim 2 Göster/Gizle</button>
+        <button onclick="toggleImage('img3')">Resim 3 Göster/Gizle</button>
+    </div>
+
+    <div style="text-align: center;">
+        <!-- C. Gösterilip gizlenecek 3 resim. Başlangıçta gizlidir (display: none). -->
+        <img id="img1" class="toggle-img" src="img/toggle1.jpg" alt="Resim 1" style="display: none;">
+        <img id="img2" class="toggle-img" src="img/toggle2.jpg" alt="Resim 2" style="display: none;">
+        <img id="img3" class="toggle-img" src="img/toggle3.jpg" alt="Resim 3" style="display: none;">
+    </div>
+
+
+<script>
+    /*
+     * Değişken tanımlamaları (const, değeri sonradan değiştirilemeyeceği için tercih edilir [7]).
+     * Satır sonu ; ile biter [1].
+     */
+    
+    // 10 farklı resim yolunu içeren sabit dizi (Array) tanımlanır [8, 9].
+    const imagePaths = [
+        "img/image1.jpg", "img/image2.jpg", "img/image3.jpg", "img/image4.jpg",
+        "img/image5.jpg", "img/image6.jpg", "img/image7.jpg", "img/image8.jpg",
+        "img/image9.jpg", "img/image10.jpg"
+    ];
+
+    // Arka plan için kullanılacak renklerin sabit dizisi.
+    const backgroundColors = [
+        "#FFC3A0", "#F7D794", "#70A1FF", "#79E0EE", "#C7A0FF",
+        "#E76F51", "#2A9D8F", "#E9C46A", "#264653", "#A8DADC"
+    ];
+
+    /**
+     * A. Her sayfa yenilemede body arka planını yenileyen fonksiyon [6].
+     */
+    function changeBackgroundColor() {
+        // Renk dizisinin uzunluğu ile 0 arasında rastgele bir tamsayı dizin (index) seçilir [10].
+        const randomIndex = Math.floor(Math.random() * backgroundColors.length);
+        
+        // document.body DOM öğesine erişilerek stil (style) özelliği değiştirilir [11].
+        document.body.style.backgroundColor = backgroundColors[randomIndex];
+    }
+
+    /**
+     * B. 10 farklı resim içinden bir resmi rastgele seçen fonksiyon.
+     */
+    function selectRandomImage() {
+        // Rastgele bir dizin seçilir [10].
+        const randomIndex = Math.floor(Math.random() * imagePaths.length);
+        
+        // ID'si "random_image" olan öğe bulunur [5] ve 'src' (kaynak) özelliği değiştirilerek resim yenilenir [5, 12].
+        document.getElementById("random_image").src = imagePaths[randomIndex];
+    }
+    
+    /**
+     * C. Belirtilen resmi gösterip gizleyen (toggle) fonksiyon.
+     */
+    function toggleImage(imageId) {
+        // Parametre olarak gelen ID ile resmi DOM'dan alır [5].
+        const image = document.getElementById(imageId);
+        
+        // Resmin mevcut 'display' (görüntüleme) durumunu kontrol eder.
+        // Bu DOM manipülasyonudur [11].
+        if (image.style.display === 'none') {
+            image.style.display = 'block'; // Gösterir
+        } else {
+            image.style.display = 'none'; // Gizler
+        }
+    }
+
+    /**
+     * Sayfa yüklendiğinde (body onload) çalışacak ana başlangıç fonksiyonu.
+     */
+    function initializePage() {
+        // Arka planı değiştirme fonksiyonunu çağırır.
+        changeBackgroundColor();
+        // Rastgele resim seçme fonksiyonunu çağırır.
+        selectRandomImage();
+    }
+</script>
+</body>
+</html>
