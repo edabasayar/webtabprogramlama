@@ -124,6 +124,15 @@
 
             <div class="input-group">
                 <label>3. Bu dersin içeriğinde hangi diller bulunmaktadır? (Birden fazla işaretleyebilirsiniz)</label>
+                <input type="checkbox" id="html" name="diller[]" value="html">
+                <label for="html" style="display:inline;">HTML5</label><br>
+
+                <input type="checkbox" id="javascript" name="diller[]" value="javascript">
+                <label for="javascript" style="display:inline;">JavaScript</label><br>
+               
+                <input type="checkbox" id="css" name="diller[]" value="css">
+                <label for="css" style="display:inline;">CSS</label><br>
+
                 <input type="checkbox" id="php" name="diller[]" value="php">
                 <label for="php" style="display:inline;">PHP</label><br>
 
@@ -166,7 +175,7 @@
             </div>
 
             <div class="input-group">
-                <label for="renk">9. En sevdiğiniz renk:</label>
+                <label for="renk">9. Kullanmayı en sevdiğiniz renk:</label>
                 <input type="color" id="renk" name="favori_renk" value="#007bff">
             </div>
 
@@ -180,10 +189,10 @@
                 <input type="url" id="url_giris" name="proje_url" placeholder="https://ornek.com">
             </div>
 
-            <div class="input-group">
-                <label for="arama_input">12. Konularda arama yapın:</label>
-                <input type="search" id="arama_input" name="arama_terimi" placeholder="Örn: CSS Selector">
-            </div>
+         <div class="input-group">
+    <label for="arama_input">12. En zorlandığınız konuyu yazın:</label>
+    <input type="search" id="arama_input" name="arama_terimi" placeholder="Örn: Flexbox">
+</div>
 
         </fieldset>
 
