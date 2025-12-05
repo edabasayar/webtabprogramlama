@@ -8,14 +8,7 @@ var ball = new Image();
 
 bg.src = "images/forest.png";
 sepet.src ="images/sepet.png";
-ball.src ="images/red.png";
-
-//ses olusturma
-var yem = new Audio();
-yem.src = "ses/yem.mp3";
-
-var gameover = new Audio();
-gameover.src = "ses/gameover.mp3";
+ball.src ="images/armut.png";
 
 //degiskenler
 var sX = 350;
@@ -26,10 +19,10 @@ var skor = 0;
 var hata = 0;
 var hatasayisi = 10;
 
-//ilk elma 
-var elma = [];
+//ilk armut 
+var armut = [];
 
-elma[0] = {
+armut[0] = {
    x: cvs.width,
    y: 0
 
@@ -55,10 +48,10 @@ function kontrol(e){
 }
 
 
-//hiz araliklarina göre elma olusturma
+//hiz araliklarina göre armut olusturma
 if (hiz <= 0.5) {
     setInterval(function(){ 
-        elma.push({
+        armut.push({
             x : Math.floor(Math.random()*(cvs.width-50)),
             y : 0
      });
@@ -67,7 +60,7 @@ if (hiz <= 0.5) {
 
 if (hiz > 0.5 && hiz <= 2) {
     setInterval(function(){ 
-        elma.push({
+        armut.push({
             x : Math.floor(Math.random()*(cvs.width-50)),
             y : 0
      });
@@ -76,7 +69,7 @@ if (hiz > 0.5 && hiz <= 2) {
 
 if (hiz > 2 ) {
     setInterval(function(){ 
-        elma.push({
+        armut.push({
             x : Math.floor(Math.random()*(cvs.width-50)),
             y : 0
      });
@@ -99,31 +92,31 @@ function draw(){
 ctx.drawImage(bg,0,0);
 ctx.drawImage(sepet,sX,sY,50,50);
 
-for(var i = 0; i < elma.length; i++){
+for(var i = 0; i < armut.length; i++){
 
-    ctx.drawImage(ball, elma[i].x, elma[i].y ,30,30);
+    ctx.drawImage(ball, armut[i].x, armut[i].y ,30,30);
 
-      elma[i].y += hiz;
+      armut[i].y += hiz;
 
 
    
-   if  (elma[i].y + ball.height >= sY +2 && elma[i].x + ball.width -10 >=  sX && elma[i].x +10 <= sX + sepet.width ){  
+   if  (armut[i].y + ball.height >= sY +2 && armut[i].x + ball.width -10 >=  sX && armut[i].x +10 <= sX + sepet.width ){  
     
     yem.play();
-    elma[i].y = sY;
-    elma[i].x = 500;
-    elma[i].y+=100; 
+    armut[i].y = sY;
+    armut[i].x = 500;
+    armut[i].y+=100; 
     skor++;
     
     
 
    }
 
-   if(elma[i].y + ball.height >= cvs.height && elma[i].x >= 0 && elma[i].x + ball.width <= 400 ){
+   if(armut[i].y + ball.height >= cvs.height && armut[i].x >= 0 && armut[i].x + ball.width <= 400 ){
     hata++;
     
-    elma[i].x = 500;
-    elma[i].y+=100; 
+    armut[i].x = 500;
+    armut[i].y+=100; 
     
    }
 
