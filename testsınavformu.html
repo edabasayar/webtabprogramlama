@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>WEB Programcılığı Test Arayüzü (test1.html)</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 30px auto; padding: 20px; }
+        fieldset { margin-bottom: 30px; border: 1px solid #007bff; padding: 15px; border-radius: 5px; }
+        legend { font-size: 1.2em; font-weight: bold; color: #007bff; }
+        label { display: block; margin-top: 10px; font-weight: 500; }
+        .input-group { margin-bottom: 15px; border-bottom: 1px dotted #ccc; padding-bottom: 15px; }
+        .submit-button { margin-top: 20px; padding: 10px 20px; background-color: #28a745; color: white; border: none; cursor: pointer; }
+        textarea { width: 98%; rows: 5; cols: 50; } /* textarea elementinin kullanımı [5, 8] */
+    </style>
+</head>
+<body>
+
+    <form action="sonuclar.php" method="POST">
+        <h1>WEB Programcılığı Bilgi Testi</h1>
+
+        <!-- **SORU GRUBU 1: Temel Seçimler ve Metin Girişleri** -->
+        <fieldset>
+            <legend>Bölüm A: Temel Kavramlar</legend>
+
+            <!-- Text Input -->
+            <div class="input-group">
+                <label for="ad_soyad">1. Adınız ve Soyadınız:</label>
+                <input type="text" id="ad_soyad" name="isim_soyisim" required>
+            </div>
+
+            <!-- Radio Input (Tek Seçenek) -->
+            <div class="input-group">
+                <label>2. HTML belgesinin davranışını kim belirler?</label>
+                <input type="radio" id="cevap_a" name="soru2" value="html"> <label for="cevap_a" style="display:inline;">HTML</label><br>
+                <input type="radio" id="cevap_b" name="soru2" value="css"> <label for="cevap_b" style="display:inline;">CSS</label><br>
+                <input type="radio" id="cevap_c" name="soru2" value="js"> <label for="cevap_c" style="display:inline;">JavaScript</label> [9]
+            </div>
+
+            <!-- Checkbox Input (Çoklu Seçenek) -->
+            <div class="input-group">
+                <label>3. WEB PROGRAMCILIĞI dersinin içeriğinde bulunan diller hangileridir? (Birden fazla seçiniz)</label>
+                <input type="checkbox" id="php" name="diller[]" value="php"> <label for="php" style="display:inline;">PHP</label> [10]<br>
+                <input type="checkbox" id="sql" name="diller[]" value="sql"> <label for="sql" style="display:inline;">SQL</label> [10]<br>
+                <input type="checkbox" id="python" name="diller[]" value="python"> <label for="python" style="display:inline;">Python</label> [11]<br>
+            </div>
+            
+            <!-- Textarea Input (Uzun Cevap) -->
+            <div class="input-group">
+                <label for="yorum">4. Web geliştirme sürecindeki deneyimlerinizi kısaca anlatınız:</label>
+                <textarea id="yorum" name="deneyim_yorum" rows="5" cols="50"></textarea> [5]
+            </div>
+
+        </fieldset>
+
+        <!-- **SORU GRUBU 2: Tüm HTML5 Input Türlerini Kullanma** [1] -->
+        <fieldset>
+            <legend>Bölüm B: Gelişmiş Giriş Türleri (Tüm Input Türlerini Kullanmaya Çalışma)</legend>
+            
+            <!-- Type: Number -->
+            <div class="input-group">
+                <label for="dom_depth">5. DOM Ağacının Maksimum Derinliğini tahmin ediniz (1-50 arası):</label>
+                <input type="number" id="dom_depth" name="tahmin_derinlik" min="1" max="50" placeholder="Sayı giriniz">
+            </div>
+
+            <!-- Type: Range -->
+            <div class="input-group">
+                <label for="kalite_puan">6. Bu arayüzün kalitesini 0 ile 100 arasında puanlayınız:</label>
+                <input type="range" id="kalite_puan" name="kalite" min="0" max="100" value="50">
+            </div>
+
+            <!-- Type: Date -->
+            <div class="input-group">
+                <label for="baslangic_tarihi">7. Bu kursa başlama tarihiniz nedir?</label>
+                <input type="date" id="baslangic_tarihi" name="baslangic_tarihi">
+            </div>
+            
+            <!-- Type: Time -->
+            <div class="input-group">
+                <label for="bitis_saati">8. Testi bitirme saatiniz:</label>
+                <input type="time" id="bitis_saati" name="bitis_saati">
+            </div>
+            
+            <!-- Type: Color -->
+            <div class="input-group">
+                <label for="renk">9. En sevdiğiniz WEB rengini seçiniz:</label>
+                <input type="color" id="renk" name="favori_renk" value="#007bff">
+            </div>
+
+            <!-- Type: File -->
+            <div class="input-group">
+                <label for="dosya">10. Çalışma dosyanızı yükleyiniz:</label>
+                <input type="file" id="dosya" name="odev_dosyasi">
+            </div>
+            
+            <!-- Type: URL -->
+            <div class="input-group">
+                <label for="url_giris">11. GitHub veya Free Web Host (000webhost.com) sayfanızın URL'si:</label> [12]
+                <input type="url" id="url_giris" name="proje_url" placeholder="http://örnek.com">
+            </div>
+            
+            <!-- Type: Search -->
+            <div class="input-group">
+                <label for="arama_input">12. Konu Ara:</label>
+                <input type="search" id="arama_input" name="arama_terimi" placeholder="Örn: CSS Selector">
+            </div>
+
+        </fieldset>
+        
+        <!-- Gizli Alanlar ve Sıfırlama Butonu -->
+        <!-- Type: Hidden (Gizli veri göndermek için) -->
+        <input type="hidden" name="test_versiyon" value="1.0">
+        
+        <!-- Submit Butonu -->
+        <input type="submit" value="Testi Gönder" class="submit-button">
+        
+        <!-- Type: Reset (Formu sıfırlamak için) -->
+        <input type="reset" value="Cevapları Sıfırla" style="background-color: #dc3545; color: white; padding: 10px 20px; border: none; cursor: pointer;">
+        
+    </form>
+
+</body>
+</html>
