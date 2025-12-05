@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Üyelik Kayıt Formu (Form1.html)</title>
+    <style>
+        /* Formun daha okunaklı olması için basit stil eklenmiştir */
+        body { font-family: Arial, sans-serif; }
+        form { width: 400px; margin: 30px auto; padding: 20px; border: 1px solid #ccc; border-radius: 5px; }
+        fieldset { margin-bottom: 20px; border: 1px solid #ddd; padding: 10px; }
+        legend { font-weight: bold; padding: 0 10px; color: #333; }
+        label { display: block; margin-top: 10px; }
+        input[type="text"], input[type="email"], input[type="password"], select {
+            width: 95%; padding: 8px; margin-top: 5px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+
+    <form action="kayit_islemi.php" method="POST">
+        <h1>Yeni Üyelik Kaydı</h1>
+        <hr>
+
+        <!-- Hesap Bilgileri Alanı -->
+        <fieldset>
+            <legend>Hesap Bilgileri</legend>
+            <label for="kullanici_adi">Kullanıcı Adı (Gerekli):</label>
+            <!-- required özniteliği, alanın boş bırakılamayacağını belirtir [7] -->
+            <input type="text" id="kullanici_adi" name="username" placeholder="Kullanıcı adı giriniz" required> 
+
+            <label for="eposta">E-posta (Gerekli):</label>
+            <!-- type="email" e-posta formatı kontrolünü sağlar [3] -->
+            <input type="email" id="eposta" name="email" placeholder="Eposta giriniz" required> 
+
+            <label for="parola">Parola (Gerekli):</label>
+            <!-- type="password" girişi gizler [2] -->
+            <input type="password" id="parola" name="password" placeholder="Parola giriniz" required> 
+        </fieldset>
+
+        <!-- Kişisel Bilgiler Alanı -->
+        <fieldset>
+            <legend>Kişisel Bilgiler</legend>
+
+            <label for="sehir">Yaşadığınız Şehir:</label>
+            <!-- select etiketi, açılır menü oluşturur [4] -->
+            <select name="sehir" id="sehir">
+                <option value="">Seçiniz</option>
+                <option value="ankara">Ankara</option>
+                <option value="istanbul">İstanbul</option>
+                <option value="izmir">İzmir</option>
+            </select>
+
+            <label>Cinsiyet:</label>
+            <!-- type="radio" radyo butonu oluşturur. Aynı 'name' değeri sadece birinin seçilmesini sağlar [2, 7]. -->
+            <input type="radio" id="erkek" name="cinsiyet" value="erkek"> <label for="erkek" style="display:inline;">Erkek</label>
+            <input type="radio" id="kadin" name="cinsiyet" value="kadin"> <label for="kadin" style="display:inline;">Kadın</label>
+
+            <label style="margin-top: 15px;">Hobileriniz:</label>
+            <!-- type="checkbox" birden fazla seçenek işaretlenebilir [2] -->
+            <input type="checkbox" id="sinema" name="hobi[]" value="sinema"> <label for="sinema" style="display:inline;">Sinema</label>
+            <input type="checkbox" id="spor" name="hobi[]" value="spor"> <label for="spor" style="display:inline;">Spor</label>
+            <input type="checkbox" id="kitap" name="hobi[]" value="kitap"> <label for="kitap" style="display:inline;">Kitap Okuma</label>
+        </fieldset>
+
+        <!-- Gönderme Butonu -->
+        <input type="submit" value="Hemen Kaydol">
+    </form>
+
+</body>
+</html>
