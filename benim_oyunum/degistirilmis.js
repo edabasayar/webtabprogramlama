@@ -1,192 +1,116 @@
 var cvs = document.getElementById("canvas");
 var ctx = cvs.getContext("2d");
 
-//resim olusturma
+// Resimler
 var bg = new Image();
 var sepet = new Image();
 var ball = new Image();
 
 bg.src = "images/forest.png";
-sepet.src ="images/sepet.png";
-ball.src ="images/armut.png";
+sepet.src = "images/sepet.png";
+ball.src = "images/armut.png";
 
-//degiskenler
+// Değişkenler
 var sX = 350;
 var sY = 550;
-var life = 10;
-var hiz = 0.5;
+var hiz = 1;
 var skor = 0;
 var hata = 0;
-var hatasayisi = 10;
+var maxHata = 10;
+var oyunBitti = false;
 
-//ilk armut 
-var armut = [];
+// Armut dizisi
+var armutlar = [];
 
-armut[0] = {
-   x: cvs.width,
-   y: 0
+// Klavye kontrolü
+document.addEventListener("keydown", function (e) {
+    if (oyunBitti) return;
 
-};
+    if (e.keyCode === 37) sX -= 20;   // Sol yön
+    if (e.keyCode === 39) sX += 20;   // Sağ yön
 
+    // Sınır kontrolü
+    if (sX < 0) sX = 0;
+    if (sX + 50 > cvs.width) sX = cvs.width - 50;
+});
 
-//klavye kontrol
-document.addEventListener("keydown",kontrol);
+// Yeni armut oluşturma fonksiyonu
+function yeniArmut() {
+    if (oyunBitti) return;
 
-function kontrol(e){
-    
-    switch(e.keyCode){
-        case 37:
-            sX-=15;
-            break;
-        case 39:
-            sX +=15;
-            break;
+    armutlar.push({
+        x: Math.floor(Math.random() * (cvs.width - 30)),
+        y: 0
+    });
+}
 
-        
+// Armut oluşturma döngüsü
+setInterval(() => {
+    yeniArmut();
+}, 700);
+
+// Hız artışı döngüsü
+setInterval(() => {
+    if (hiz < 6) hiz += 0.2;
+}, 6000);
+
+// Ana çizim fonksiyonu
+function draw() {
+
+    if (oyunBitti) return;
+
+    ctx.drawImage(bg, 0, 0, cvs.width, cvs.height);
+    ctx.drawImage(sepet, sX, sY, 50, 50);
+
+    // Armutları işle
+    for (let i = 0; i < armutlar.length; i++) {
+        let a = armutlar[i];
+
+        ctx.drawImage(ball, a.x, a.y, 30, 30);
+        a.y += hiz;
+
+        // Sepet ile yakalama çarpışması
+        if (
+            a.y + 30 >= sY &&
+            a.x + 30 >= sX &&
+            a.x <= sX + 50
+        ) {
+            skor++;
+            armutlar.splice(i, 1);
+            i--;
+            continue;
+        }
+
+        // Yere düşme (kaçırma)
+        if (a.y > cvs.height) {
+            hata++;
+            armutlar.splice(i, 1);
+            i--;
+        }
     }
-    
-}
 
+    // Skor ve hata yazıları
+    ctx.font = "25px Courier New";
+    ctx.fillStyle = "white";
+    ctx.textAlign = "left";
 
-//hiz araliklarina göre armut olusturma
-if (hiz <= 0.5) {
-    setInterval(function(){ 
-        armut.push({
-            x : Math.floor(Math.random()*(cvs.width-50)),
-            y : 0
-     });
-     }, 1000);
-}
+    ctx.fillText("Skor: " + skor, 10, 30);
+    ctx.fillText("Hata: " + hata, 10, 60);
 
-if (hiz > 0.5 && hiz <= 2) {
-    setInterval(function(){ 
-        armut.push({
-            x : Math.floor(Math.random()*(cvs.width-50)),
-            y : 0
-     });
-     }, 300);
-}
+    // Oyun bitiş kontrolü
+    if (hata >= maxHata) {
+        oyunBitti = true;
 
-if (hiz > 2 ) {
-    setInterval(function(){ 
-        armut.push({
-            x : Math.floor(Math.random()*(cvs.width-50)),
-            y : 0
-     });
-     }, 100);
-}
+        ctx.font = "60px Arial";
+        ctx.fillStyle = "pink";
+        ctx.textAlign = "center";
+        ctx.fillText("GAME OVER", cvs.width / 2, cvs.height / 2);
 
-//hiz araligi ve artisi
- setInterval(function(){ 
-    if (hiz <= 4.75) {
-        hiz += 0.25;
+        return;
     }
- }, 7000);
 
- 
-
-//çizim islemleri
-
-function draw(){
-
-ctx.drawImage(bg,0,0);
-ctx.drawImage(sepet,sX,sY,50,50);
-
-for(var i = 0; i < armut.length; i++){
-
-    ctx.drawImage(ball, armut[i].x, armut[i].y ,30,30);
-
-      armut[i].y += hiz;
-
-
-   
-   if  (armut[i].y + ball.height >= sY +2 && armut[i].x + ball.width -10 >=  sX && armut[i].x +10 <= sX + sepet.width ){  
-    
-    yem.play();
-    armut[i].y = sY;
-    armut[i].x = 500;
-    armut[i].y+=100; 
-    skor++;
-    
-    
-
-   }
-
-   if(armut[i].y + ball.height >= cvs.height && armut[i].x >= 0 && armut[i].x + ball.width <= 400 ){
-    hata++;
-    
-    armut[i].x = 500;
-    armut[i].y+=100; 
-    
-   }
-
-   //sepetin sag ve sol kisimlardan tasmamasi
-   if (sX + sepet.width >= cvs.width) {
-       sX = 350;
-   }
-
-   if (sX <= 0) {
-       sX = 0;
-   }
-   
-
-   //yazi olusturma
-   ctx.font = " 30px Courier New";
-   ctx.textalign = "center";
-   ctx.textBaseline = "hanging";
-   ctx.fillStyle = "white";
-   ctx.fillText("Skor: " + skor,0,5);
-
-  
-   //hata kismi hatasayisina ulastiginda oyunun bitmesi
-   if (hata == hatasayisi) {
-    
-    
-    ctx.font = " 30px Courier New";
-    ctx.textalign = "center";
-    ctx.textBaseline = "hanging";
-    ctx.fillStyle = "white";
-    ctx.fillText("Hata: " + hata,0,50); 
-
-    ctx.font = " 50px Arial";
-    ctx.textalign = "center";
-    ctx.textBaseline = "hanging";
-    ctx.fillStyle = "pink";
-    ctx.fillText("Game Over",65,275);
-    
-    gameover.play();
-    draw.stop();
-
-   }
-   
-
+    requestAnimationFrame(draw);
 }
 
-
-if (hata <= 9) {
-    ctx.font = " 30px Courier New";
-    ctx.textalign = "center";
-    ctx.textBaseline = "hanging";
-    ctx.fillStyle = "white";
-    ctx.fillText("Hata: " + hata,0,50);
-    
-   }
-requestAnimationFrame(draw);
-}
 
 draw();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
