@@ -3,69 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Haftalık Ders Programı</title>
+    <title>Eda'nın Haftalık Ders Programı (Inline CSS)</title>
 </head>
 
-<body style="font-family: Arial, sans-serif;">
+<body>
 
-<h2 style="text-align: center;">Eda'nın Haftalık Ders Programı</h2>
+<h2 style="text-align: center; font-family: Arial, sans-serif; color: #333;">Eda'nın Haftalık Ders Programı</h2>
 
-<table style="width: 100%; border-collapse: collapse; text-align: center;">
-    <tr>
-        <th style="border: 1px solid #000; padding: 10px; background-color: #f0f0f0; width: 120px; font-weight: bold;">Saat</th>
-        <th style="border: 1px solid #000; padding: 10px; background-color: #f0f0f0;">Pazartesi</th>
-        <th style="border: 1px solid #000; padding: 10px; background-color: #f0f0f0;">Salı</th>
-        <th style="border: 1px solid #000; padding: 10px; background-color: #f0f0f0;">Çarşamba</th>
-        <th style="border: 1px solid #000; padding: 10px; background-color: #f0f0f0;">Perşembe</th>
-        <th style="border: 1px solid #000; padding: 10px; background-color: #f0f0f0;">Cuma</th>
+<table style="width: 80%; border-collapse: collapse; text-align: center; margin: 20px auto; border: 1px solid #000;">
+    <tr style="background-color: #007bff; color: white;">
+        <th style="border: 1px solid #000; padding: 10px; width: 120px;">Gün</th>
+        <th style="border: 1px solid #000; padding: 10px; width: 150px;">Saat Aralığı</th>
+        <th style="border: 1px solid #000; padding: 10px;">Ders Bilgisi</th>
+        <th style="border: 1px solid #000; padding: 10px; width: 100px;">Yer/Sınıf</th>
     </tr>
 
-    <tr>
-        <td style="border: 1px solid #000; padding: 10px; width: 120px; font-weight: bold;">08:40 - 10:30</td>
-        <td style="border: 1px solid #000; padding: 10px;">SEgt353.01<br>Karakter ve Değer Eğitimi<br><b>S</b> C-ZK-16</td>
-        <td style="border: 1px solid #000; padding: 10px;"></td>
-        <td style="border: 1px solid #000; padding: 10px;"></td>
-        <td style="border: 1px solid #000; padding: 10px;"></td>
-        <td style="border: 1px solid #000; padding: 10px;"></td>
+    <tr style="background-color: #f0f8ff;">
+        <td rowspan="4" style="border: 1px solid #000; padding: 10px; font-weight: bold;">Pazartesi</td>
+        <td style="border: 1px solid #000; padding: 8px;">08:40 - 10:30</td>
+        <td style="border: 1px solid #000; padding: 8px;">SEgt353.01<br>Karakter ve Değer Eğitimi</td>
+        <td style="border: 1px solid #000; padding: 8px;">C-ZK-16</td>
+    </tr>
+    <tr style="background-color: #f0f8ff;">
+        <td style="border: 1px solid #000; padding: 8px;">10:40 - 12:30</td>
+        <td style="border: 1px solid #000; padding: 8px;">BTE307.02<br>Eğitimde Modelleme ve Tasarım</td>
+        <td style="border: 1px solid #000; padding: 8px;">C-K2-10</td>
+    </tr>
+    <tr style="background-color: #f0f8ff;">
+        <td style="border: 1px solid #000; padding: 8px;">15:40 - 17:30</td>
+        <td style="border: 1px solid #000; padding: 8px;">BTE307.02<br>Eğitimde Modelleme ve Tasarım</td>
+        <td style="border: 1px solid #000; padding: 8px;">A-ZK-15 (BÖTE Lab 2)</td>
+    </tr>
+    <tr style="background-color: #f0f8ff;">
+        <td style="border: 1px solid #000; padding: 8px;"></td>
+        <td style="border: 1px solid #000; padding: 8px;"></td>
+        <td style="border: 1px solid #000; padding: 8px;"></td>
     </tr>
 
-    <tr>
-        <td style="border: 1px solid #000; padding: 10px; width: 120px; font-weight: bold;">09:40 - 11:30</td>
-        <td style="border: 1px solid #000; padding: 10px;"></td>
-        <td style="border: 1px solid #000; padding: 10px;">BTE 429<br>Eğitim Teknolojilerinde Güncel Uygulamalar<br><b>Z</b> C-ZK-13</td>
-        <td style="border: 1px solid #000; padding: 10px;">BTE 311<br>Web Tabanlı Programlama<br><b>Z</b> A-ZK-15 (BÖTE Lab 2)</td>
-        <td style="border: 1px solid #000; padding: 10px;"></td>
-        <td style="border: 1px solid #000; padding: 10px;"></td>
+    <tr style="background-color: #e6e6fa;">
+        <td rowspan="4" style="border: 1px solid #000; padding: 10px; font-weight: bold;">Salı</td>
+        <td style="border: 1px solid #000; padding: 8px;">09:40 - 11:30</td>
+        <td style="border: 1px solid #000; padding: 8px;">BTE 429<br>Eğitim Teknolojilerinde Güncel Uygulamalar</td>
+        <td style="border: 1px solid #000; padding: 8px;">C-ZK-13</td>
+    </tr>
+    <tr style="background-color: #e6e6fa;">
+        <td style="border: 1px solid #000; padding: 8px;">12:40 - 14:30</td>
+        <td style="border: 1px solid #000; padding: 8px;">BTE 427<br>Teknoloji Planlaması ve Uygulamaları</td>
+        <td style="border: 1px solid #000; padding: 8px;">C-K1-11</td>
+    </tr>
+     <tr style="background-color: #e6e6fa;">
+        <td style="border: 1px solid #000; padding: 8px;">15:40 - 17:30</td>
+        <td style="border: 1px solid #000; padding: 8px;">4ZEGT402.04<br>Özel Eğitim ve Kaynaştırma</td>
+        <td style="border: 1px solid #000; padding: 8px;">C-K3-13</td>
+    </tr>
+     <tr style="background-color: #e6e6fa;">
+        <td style="border: 1px solid #000; padding: 8px;"></td>
+        <td style="border: 1px solid #000; padding: 8px;"></td>
+        <td style="border: 1px solid #000; padding: 8px;"></td>
     </tr>
 
-    <tr>
-        <td style="border: 1px solid #000; padding: 10px; width: 120px; font-weight: bold;">10:40 - 12:30</td>
-        <td style="border: 1px solid #000; padding: 10px;">BTE307.02<br>Eğitimde Modelleme ve Tasarım<br><b>Z</b> C-K2-10</td>
-        <td style="border: 1px solid #000; padding: 10px;"></td>
-        <td style="border: 1px solid #000; padding: 10px;">BTE 311<br>Web Tabanlı Programlama<br><b>Z</b> A-ZK-15 (BÖTE Lab 2)</td>
-        <td style="border: 1px solid #000; padding: 10px;"></td>
-        <td style="border: 1px solid #000; padding: 10px;"></td>
+    <tr style="background-color: #fffacd;">
+        <td rowspan="4" style="border: 1px solid #000; padding: 10px; font-weight: bold;">Çarşamba</td>
+        <td style="border: 1px solid #000; padding: 8px;">09:40 - 12:30</td>
+        <td style="border: 1px solid #000; padding: 8px;">BTE 311<br>Web Tabanlı Programlama</td>
+        <td style="border: 1px solid #000; padding: 8px;">A-ZK-15 (BÖTE Lab 2)</td>
+    </tr>
+    <tr style="background-color: #fffacd;">
+        <td style="border: 1px solid #000; padding: 8px;">12:40 - 14:30</td>
+        <td style="border: 1px solid #000; padding: 8px;">ZEGT304.03<br>Sınıf Yönetimi</td>
+        <td style="border: 1px solid #000; padding: 8px;">C-K3-11</td>
+    </tr>
+    <tr style="background-color: #fffacd;">
+        <td style="border: 1px solid #000; padding: 8px;">15:40 - 17:30</td>
+        <td style="border: 1px solid #000; padding: 8px;">BTE 309<br>Bilişim Öğretim Programları</td>
+        <td style="border: 1px solid #000; padding: 8px;">C-K3-09</td>
+    </tr>
+    <tr style="background-color: #fffacd;">
+        <td style="border: 1px solid #000; padding: 8px;"></td>
+        <td style="border: 1px solid #000; padding: 8px;"></td>
+        <td style="border: 1px solid #000; padding: 8px;"></td>
     </tr>
 
-    <tr>
-        <td style="border: 1px solid #000; padding: 10px; width: 120px; font-weight: bold;">12:40 - 14:30</td>
-        <td style="border: 1px solid #000; padding: 10px;"></td>
-        <td style="border: 1px solid #000; padding: 10px;">BTE 427<br>Teknoloji Planlaması ve Uygulamaları<br><b>Z</b> C-K1-11</td>
-        <td style="border: 1px solid #000; padding: 10px;">ZEGT304.03<br>Sınıf Yönetimi<br><b>S</b> C-K3-11</td>
-        <td style="border: 1px solid #000; padding: 10px;">SEGT350.02<br>Eğitimde Program Geliştirme<br><b>S</b> C-K3-12</td>
-        <td style="border: 1px solid #000; padding: 10px;"></td>
+    <tr style="background-color: #faebd7;">
+        <td rowspan="2" style="border: 1px solid #000; padding: 10px; font-weight: bold;">Perşembe</td>
+        <td style="border: 1px solid #000; padding: 8px;">12:40 - 14:30</td>
+        <td style="border: 1px solid #000; padding: 8px;">SEGT350.02<br>Eğitimde Program Geliştirme</td>
+        <td style="border: 1px solid #000; padding: 8px;">C-K3-12</td>
+    </tr>
+    <tr style="background-color: #faebd7;">
+        <td style="border: 1px solid #000; padding: 8px;">15:40 - 17:30</td>
+        <td style="border: 1px solid #000; padding: 8px;">GKS103.03<br>Kariyer Planlama ve Geliştirme</td>
+        <td style="border: 1px solid #000; padding: 8px;">C-K2-10</td>
     </tr>
     
-    <tr>
-        <td style="border: 1px solid #000; padding: 10px; width: 120px; font-weight: bold;">15:40 - 17:30</td>
-        <td style="border: 1px solid #000; padding: 10px;">BTE307.02<br>Eğitimde Modelleme ve Tasarım<br><b>Z</b> A-ZK-15 (BÖTE Lab 2)</td>
-        <td style="border: 1px solid #000; padding: 10px;">4ZEGT402.04<br>Özel Eğitim ve Kaynaştırma<br><b>S</b> C-K3-13</td>
-        <td style="border: 1px solid #000; padding: 10px;">BTE 309<br>Bilişim Öğretim Programları<br><b>Z</b> C-K3-09</td>
-        <td style="border: 1px solid #000; padding: 10px;">GKS103.03<br>Kariyer Planlama ve Geliştirme<br><b>S</b> C-K2-10</td>
-        <td style="border: 1px solid #000; padding: 10px;"></td>
+    <tr style="background-color: #f0fff0;">
+        <td style="border: 1px solid #000; padding: 10px; font-weight: bold;">Cuma</td>
+        <td style="border: 1px solid #000; padding: 8px;"></td>
+        <td style="border: 1px solid #000; padding: 8px;">Ders Yok</td>
+        <td style="border: 1px solid #000; padding: 8px;"></td>
     </tr>
 
 </table>
-
 </body>
 </html>
