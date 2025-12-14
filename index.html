@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ödev Listesi - EDA BAŞAYAR</title>
+    <title>Ödev Listesi - EDA BAŞAYAR (Modern)</title>
     <style>
-        /* Ana Animasyon: Titreşim (Yeni Yeşil/Mavi Temaya Uygun) */
+        /* Titreşim efekti için anahtar kareler, butonlar üzerinde hafif bir canlılık sağlar */
         @keyframes pulse-flame {
-            0% { transform: scale(1); box-shadow: 0 0 5px rgba(42, 171, 171, 0.7); } /* Başlangıç rengi */
-            50% { transform: scale(1.01); box-shadow: 0 0 15px rgba(50, 205, 50, 1); } /* Parlak yeşil */
-            100% { transform: scale(1); box-shadow: 0 0 5px rgba(42, 171, 171, 0.7); } /* Bitiş rengi */
+            0% { transform: scale(1); box-shadow: 0 0 5px rgba(42, 171, 171, 0.7); } 
+            50% { transform: scale(1.01); box-shadow: 0 0 15px rgba(50, 205, 50, 1); } 
+            100% { transform: scale(1); box-shadow: 0 0 5px rgba(42, 171, 171, 0.7); } 
         }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            /* Arka Plan: Koyu Kırmızıdan Koyu Turuncuya (Alev Teması Korundu) */
-            background: linear-gradient(135deg, #1f0101 0%, #3d0500 50%, #1f0101 100%); 
-            color: #fff; 
+            /* Arka plan rengi: Koyu mavi/mor */
+            background: #12121e; 
+            color: #e0e0ff; /* Metin rengi */
             margin: 0;
             padding: 40px 20px;
             min-height: 100vh;
@@ -24,63 +24,64 @@
         }
 
         h1 {
-            color: #55bd7e; /* Başlık Rengi: Canlı Yeşil */
-            border-bottom: 4px solid #12548f; /* Alt Çizgi Rengi: Koyu Mavi */
+            color: #42a5f5; /* Başlık rengi */
+            border-bottom: 3px solid #64b5f6;
             padding-bottom: 15px;
             margin-bottom: 40px;
-            font-size: 2.5em;
-            text-shadow: 0 0 10px #12548f; /* Başlık Gölgesi: Koyu Mavi/Koyu Yeşil */
+            font-size: 2.2em;
+            text-shadow: 0 0 8px rgba(66, 165, 245, 0.5); /* Başlık gölgesi */
         }
         
         h2 {
-            color: #2aabab; /* Başlık Rengi: Turkuaz Mavi */
-            text-shadow: 0 0 5px #13738b;
+            color: #bdbdbd; /* Başlık alt rengi */
+            font-size: 1.2em;
+            margin-top: 5px;
+            margin-bottom: 15px;
         }
 
-        /* Liste Kapsayıcı (Link Kutusu) */
+        /* Tüm bağlantıları içeren ana kutu */
         div.link-container {
             display: flex;
             flex-direction: column;
-            gap: 12px;
-            max-width: 700px;
+            gap: 10px; 
+            max-width: 650px;
             margin: 0 auto;
-            padding: 30px;
-            background-color: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            border: 1px solid rgba(42, 171, 171, 0.5); /* Turkuaz Çerçeve */
-            box-shadow: 0 0 30px rgba(50, 205, 50, 0.6); /* Canlı Yeşil Gölge */
+            padding: 25px;
+            background-color: #1e1e30; /* Kutu arka planı */
+            border-radius: 12px;
+            border: 1px solid #3f51b5; /* Kutu çerçevesi */
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); 
         }
 
-        /* Bağlantılar (Butonlar) */
+        /* Tüm linklerin stil ayarları */
         a {
             display: block;
-            padding: 15px 20px;
-            /* Canlı Mavi/Yeşil Degrade */
-            background: linear-gradient(45deg, #1d6263, #2aabab); 
-            color: #f0f0f0; /* Metin Rengi: Daha iyi okunması için açık gri/beyaz yapıldı */
+            padding: 12px 15px;
+            /* Buton degrade rengi */
+            background: linear-gradient(90deg, #3f51b5, #6589ff); 
+            color: #ffffff; /* Buton metin rengi */
             text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
+            border-radius: 6px;
+            font-weight: 600;
             text-align: center;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             
-            /* Alev Animasyonu */
-            animation: pulse-flame 2s infinite alternate;
-            transition: background 0.3s ease, transform 0.3s ease;
+            /* Yumuşak geçişler */
+            transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; 
         }
 
         a:hover {
-            /* Üzerine gelince daha yoğun yeşil/mavi */
-            background: linear-gradient(45deg, #30a872, #27c593); 
-            transform: scale(1.02);
-            box-shadow: 0 0 20px #30a872; /* Hover Gölgesi: Yeşil tonuna çevrildi */
+            /* Buton üzerine gelindiğinde (hover) stili */
+            background: linear-gradient(90deg, #6589ff, #3f51b5); 
+            transform: translateY(-2px); /* Hafif yukarı kalkma efekti */
+            box-shadow: 0 5px 15px rgba(63, 81, 181, 0.7); 
         }
         
         hr {
             border: 0;
-            border-top: 2px solid #298cb7;
-            margin: 25px 0;
-            box-shadow: 0 1px 5px #5ac6c0;
+            border-top: 1px solid #3f51b5;
+            margin: 20px 0;
+            box-shadow: none; 
         }
     </style>
 </head>
@@ -89,7 +90,7 @@
     
     <div class="link-container">
         
-        <h2 style="margin-top: 0;">HTML & CSS & JS</h2>
+        <h2 style="margin-top: 0;">HTML, CSS & JavaScript Uygulamaları</h2>
         <a href="dersprogramıtablo.html">Ders Programı (HTML Tablo)</a>
         <a href="ders_programı_inline.html">İnline Ders Programı</a>
         <a href="icice_tablo.html">İç İçe Tablo</a>
@@ -105,7 +106,7 @@
         
         <hr>
         
-        <h2>PHP </h2>
+        <h2>PHP Uygulamaları</h2>
         <a href="web/giris.php">PHP Giriş (Şifre Uygulaması)</a>
         <a href="web/tablo_formu.html">PHP Dinamik Tablo Formu</a>
         <a href="web/tablo_olustur.php">PHP Dinamik Tablo Oluştur</a>
