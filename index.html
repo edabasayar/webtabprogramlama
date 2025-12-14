@@ -1,25 +1,80 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BTE311ÖDEVLER</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BTE311 ÖDEV LİSTESİ</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6; /* Açık gri arka plan */
+            color: #333;
+            margin: 40px;
+        }
+
+        h1 {
+            color: #007bff; /* Mavi başlık rengi */
+            border-bottom: 3px solid #007bff;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        /* Liste görünümünü düzenleme */
+        div.link-container {
+            display: flex; /* Öğeleri yan yana veya düzenli hizalamak için flex kullanırız */
+            flex-direction: column; /* Öğeleri alt alta sıralar */
+            gap: 10px; /* Öğeler arasına boşluk koyar */
+            max-width: 600px;
+            margin: 0 auto; /* Ortalamak için */
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Bağlantıları buton gibi gösterme */
+        a {
+            display: block; /* Bağlantının tüm satırı kaplamasını sağlar */
+            padding: 12px 15px;
+            background-color: #3399ff; /* Mavi buton rengi */
+            color: white;
+            text-decoration: none; /* Alt çizgiyi kaldırır */
+            border-radius: 6px;
+            transition: background-color 0.3s ease; /* Fare üzerine gelince yumuşak geçiş */
+            font-weight: bold;
+            text-align: center;
+        }
+
+        a:hover {
+            background-color: #0077cc; /* Fare üzerine gelince koyu mavi */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+    </style>
 </head>
 <body>
-    <h1>BTE311 WEB TABANLI PROGRAMLAMA DERSİ ÖDEVLERİ</h1>
-  <a href="dersprogramıtablo.html">ders_programı_lab_görevi</a><br>
-   <a href="icice_tablo.html">ic_ice_tablo_lab_görevi</a><br>
-   <a href="testsınavformu.html">test_sınav_form</a><br>
-   <a href="uyelikformu.html">Üyelik_Formu</a><br>
-  <a href="odev.html">ders_denemeleri</a><br>
-  <a href="hafta7lab.html">hafta7_lab_görevi</a><br>
-  <a href="hafta8lab.html">hafta8_lab_görevi</a><br>
-   <a href="hafta9lab.html">hafta9_lab_görevi</a><br>
-   <a href="oyun/index.html">oyun</a><br>
-   <a href="benim_oyunum/index.html">değistirilmis_oyun</a><br>
-  <a href="venn_semasi.html">venn_semasi</a><br>
-  <a href="web/giris.php">php_sifre</a><br>
-  
-  
+    <h1>EDA BAŞAYAR BTE311 WEB TABANLI PROGRAMLAMA DERSİ ÖDEV LİSTESİ</h1>
+    
+    <div class="link-container">
+        <a href="dersprogramıtablo.html">Ders Programı (HTML Tablo)</a>
+        <a href="icice_tablo.html">İç İçe Tablo</a>
+        <a href="testsınavformu.html">Test Sınav Formu</a>
+        <a href="uyelikformu.html">Üyelik Formu</a>
+        <a href="odev.html">Ders Denemeleri</a>
+        <a href="hafta7lab.html">Hafta 7 Lab Görevi</a>
+        <a href="hafta8lab.html">Hafta 8 Lab Görevi</a>
+        <a href="hafta9lab.html">Hafta 9 Lab Görevi</a>
+        <a href="oyun/index.html">Oyun</a>
+        <a href="benim_oyunum/index.html">Değiştirilmiş Oyun</a>
+        <a href="venn_semasi.html">Venn Şeması</a>
+        
+        <hr style="border: 0; border-top: 1px solid #ccc; margin: 15px 0;">
+        <h2 style="color: #007bff; font-size: 1.2em; text-align: center;">PHP Uygulamaları</h2>
+        
+        <a href="web/giris.php">PHP Giriş (Şifre Uygulaması)</a>
+        <a href="web/tablo_olustur.php">PHP Dinamik Tablo Oluştur</a>
+        <a href="web/tablo_formu.html">PHP Dinamik Tablo Formu</a>
+        <a href="web/tek_sayilar.php">PHP 1-100 Tek Sayılar</a>
+    </div>
 </body>
 </html>
