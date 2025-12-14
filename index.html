@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ödev Listesi - EDA BAŞAYAR </title>
+    <title>Ödev Listesi - EDA BAŞAYAR</title>
     <style>
-        /* Ana Animasyon: Hafif Titreşim (Pulse) */
+        /* Ana Animasyon: Titreşim (Yeni Yeşil/Mavi Temaya Uygun) */
         @keyframes pulse-flame {
-            0% { transform: scale(1); box-shadow: 0 0 5px rgba(255, 165, 0, 0.7); }
-            50% { transform: scale(1.01); box-shadow: 0 0 15px rgba(255, 100, 0, 1); }
-            100% { transform: scale(1); box-shadow: 0 0 5px rgba(255, 165, 0, 0.7); }
+            0% { transform: scale(1); box-shadow: 0 0 5px rgba(42, 171, 171, 0.7); } /* Başlangıç rengi */
+            50% { transform: scale(1.01); box-shadow: 0 0 15px rgba(50, 205, 50, 1); } /* Parlak yeşil */
+            100% { transform: scale(1); box-shadow: 0 0 5px rgba(42, 171, 171, 0.7); } /* Bitiş rengi */
         }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            /* Alevli Arka Plan: Koyu Kırmızıdan Koyu Turuncuya degrade */
+            /* Arka Plan: Koyu Kırmızıdan Koyu Turuncuya (Alev Teması Korundu) */
             background: linear-gradient(135deg, #1f0101 0%, #3d0500 50%, #1f0101 100%); 
-            color: #fff; /* Beyaz metin rengi */
+            color: #fff; 
             margin: 0;
             padding: 40px 20px;
             min-height: 100vh;
@@ -24,20 +24,20 @@
         }
 
         h1 {
-            color: #ffcc00; /* Parlak Sarı */
-            border-bottom: 4px solid #ff4500; /* Parlak Turuncu Alt Çizgi */
+            color: #55bd7e; /* Başlık Rengi: Canlı Yeşil */
+            border-bottom: 4px solid #12548f; /* Alt Çizgi Rengi: Koyu Mavi */
             padding-bottom: 15px;
             margin-bottom: 40px;
             font-size: 2.5em;
-            text-shadow: 0 0 10px #ff0000; /* Kırmızı gölge */
+            text-shadow: 0 0 10px #12548f; /* Başlık Gölgesi: Koyu Mavi/Koyu Yeşil */
         }
         
         h2 {
-            color: #ff9900; /* Turuncu tonu */
-            text-shadow: 0 0 5px #ff4500;
+            color: #2aabab; /* Başlık Rengi: Turkuaz Mavi */
+            text-shadow: 0 0 5px #13738b;
         }
 
-      
+        /* Liste Kapsayıcı (Link Kutusu) */
         div.link-container {
             display: flex;
             flex-direction: column;
@@ -45,18 +45,19 @@
             max-width: 700px;
             margin: 0 auto;
             padding: 30px;
-            background-color: rgba(255, 255, 255, 0.05); /* Yarı saydam beyaz */
+            background-color: rgba(255, 255, 255, 0.05);
             border-radius: 15px;
-            border: 1px solid rgba(255, 165, 0, 0.5); /* Turuncu çerçeve */
-            box-shadow: 0 0 30px rgba(255, 100, 0, 0.8); /* Yoğun parlak gölge */
+            border: 1px solid rgba(42, 171, 171, 0.5); /* Turkuaz Çerçeve */
+            box-shadow: 0 0 30px rgba(50, 205, 50, 0.6); /* Canlı Yeşil Gölge */
         }
 
+        /* Bağlantılar (Butonlar) */
         a {
             display: block;
             padding: 15px 20px;
-            /* Canlı Kırmızıdan Turuncuya Degrade */
-            background: linear-gradient(45deg, #ff4500, #ffa500); 
-            color: #1a1a1a; /* Koyu Metin */
+            /* Canlı Mavi/Yeşil Degrade */
+            background: linear-gradient(45deg, #1d6263, #2aabab); 
+            color: #f0f0f0; /* Metin Rengi: Daha iyi okunması için açık gri/beyaz yapıldı */
             text-decoration: none;
             border-radius: 8px;
             font-weight: bold;
@@ -69,17 +70,17 @@
         }
 
         a:hover {
-            /* Üzerine gelince daha yoğun renk */
-            background: linear-gradient(45deg, #ff0000, #ff8c00); 
+            /* Üzerine gelince daha yoğun yeşil/mavi */
+            background: linear-gradient(45deg, #30a872, #27c593); 
             transform: scale(1.02);
-            box-shadow: 0 0 20px #ff0000;
+            box-shadow: 0 0 20px #30a872; /* Hover Gölgesi: Yeşil tonuna çevrildi */
         }
         
         hr {
             border: 0;
-            border-top: 2px solid #ff9900;
+            border-top: 2px solid #298cb7;
             margin: 25px 0;
-            box-shadow: 0 1px 5px #ff9900;
+            box-shadow: 0 1px 5px #5ac6c0;
         }
     </style>
 </head>
