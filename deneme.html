@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Animation Fill Mode Property</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    
+    <style>
+        /* CSS kodu head etiketi içine alındı */
+        body {
+            background: #ff944d;
+        }
+
+        /* Tüm animasyon div'leri için ortak stil */
+        .div1, .div2, .div3 {
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: relative;
+            margin-bottom: 250px; /* Her div arasında boşluk bırakıldı */
+            margin-right: 20px;
+            display: inline-block; /* Div'leri yan yana hizalamak için */
+            text-align: center;
+            line-height: 100px;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* 1. Kutu: animation-fill-mode: both (Hem başta hem sonda ilk/son keyframe'i korur) */
+        .div1 {
+            animation-name: example1;
+            animation-duration: 3s;
+            animation-delay: 2s; /* 2 saniye gecikme */
+            animation-fill-mode: both;
+        }
+
+        @keyframes example1 {
+            from {top: 0px; background-color: #b300b3;} /* Başlangıç rengi: Mor */
+            to {top: 200px; background-color: blue;}    /* Bitiş rengi: Mavi */
+        }
+
+        /* 2. Kutu: animation-fill-mode: backwards (Sadece başta ilk keyframe'i korur) */
+        .div2 {
+            animation-name: example2;
+            animation-duration: 3s;
+            animation-delay: 2s; /* 2 saniye gecikme */
+            animation-fill-mode: backwards;
+        }
+
+        @keyframes example2 {
+            from {top: 0px; background-color: yellow;} /* Başlangıç rengi: Sarı */
+            to {top: 200px; background-color: limegreen;}
+        }
+        
+        /* 3. Kutu: animation-fill-mode: forwards (Sadece sonda son keyframe'i korur) */
+        .div3 {
+            animation-name: example3;
+            animation-duration: 3s;
+            animation-delay: 2s;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes example3 {
+            from {top: 0px; background-color: green;} 
+            to {top: 200px; background-color: #b300b3;} /* Bitiş rengi: Mor */
+        }
+    </style>
+</head>
+
+<body>
+<br/><br/>
+<div class="container">
+    <div class="text-center">
+        <h1 style="color: white; margin-bottom: 40px;">CSS Animation Fill Mode Property</h1>
+    </div>
+    
+    <div class="col-md-12">
+        <div class="div1">Both</div>
+        <div class="div2">Backwards</div>
+        <div class="div3">Forwards</div>
+    </div>
+    
+    <p style="color: white; margin-top: 300px;">
+        <br><b>Both:</b> Animasyon başlamadan önce (delay süresince) başlangıç stilini (from) korur ve bittikten sonra da bitiş stilini (to) korur.
+        <br><b>Backwards:</b> Animasyon başlamadan önce (delay süresince) sadece başlangıç stilini (from) korur, bittikten sonra orijinal CSS stiline döner.
+        <br><b>Forwards:</b> Animasyon başladıktan sonra bittiğinde (to) stilini korur, başlamadan önceki (delay süresince) orijinal stili korur.
+    </p>
+
+</div>
+</body>
+</html>
