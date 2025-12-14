@@ -3,15 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ödev Listesi - EDA BAŞAYAR (Modern ve Animasyonlu)</title>
+    <title>Ödev Listesi - EDA BAŞAYAR (Spotlight)</title>
     <style>
-        /* YENİ: Tekno Parlama Animasyonu */
-        @keyframes subtle-glow {
-            0% { box-shadow: 0 0 15px #42a5f5; opacity: 0.6; } /* Mavi parlama */
-            50% { box-shadow: 0 0 30px #6589ff; opacity: 0.9; } /* Açık mavi parlama */
-            100% { box-shadow: 0 0 15px #42a5f5; opacity: 0.6; }
-        }
-
+      
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: #12121e; 
@@ -20,36 +14,26 @@
             padding: 40px 20px;
             min-height: 100vh;
             text-align: center;
-            overflow-x: hidden; /* Animasyonun taşmasını önlemek için */
-            position: relative; /* ::before/::after konumlandırması için */
-        }
-        
-        /* YENİ: Sol ve Sağ Taraflara Parlama Efektleri */
-        body::before, body::after {
-            content: '';
-            position: absolute;
-            width: 150px;
-            height: 150px;
-            border-radius: 50%; /* Dairesel şekil */
-            background: rgba(66, 165, 245, 0.2); /* Yarı saydam mavi */
-            z-index: -1; /* İçeriğin arkasında kalmasını sağlar */
-            filter: blur(50px); /* Yoğun bulanıklık */
-            animation: subtle-glow 8s infinite alternate; /* Yavaş ve sürekli animasyon */
+            overflow-x: hidden; 
+            position: relative;
+            /* cursor: none; */ /* İmleci gizler (isteğe bağlı) */
         }
 
-        body::before {
-            top: 20%;
-            left: 5%;
+        /* İmleci takip eden parlama elementi */
+        #cursor-glow {
+            position: fixed;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            /* Işınsal (radial) degrade ile parlama efekti oluşturur */
+            background: radial-gradient(circle, rgba(101, 137, 255, 0.3) 0%, rgba(18, 18, 30, 0) 70%); 
+            pointer-events: none; /* Etkileşimi engellemez */
+            transform: translate(-50%, -50%); /* Merkezi imleç pozisyonuna hizalar */
+            transition: opacity 0.3s ease; 
+            z-index: 999;
         }
 
-        body::after {
-            bottom: 10%;
-            right: 5%;
-            animation-delay: 2s; /* İki parlama arasında senkronizasyon farkı yaratır */
-        }
-        
-        /* --- Mevcut Stiller --- */
-
+        /* --- Ana Sayfa Stilleri --- */
         h1 {
             color: #42a5f5;
             border-bottom: 3px solid #64b5f6;
@@ -57,7 +41,7 @@
             margin-bottom: 40px;
             font-size: 2.2em;
             text-shadow: 0 0 8px rgba(66, 165, 245, 0.5);
-            position: relative; /* Z-index için */
+            position: relative; 
             z-index: 10;
         }
         
@@ -68,6 +52,7 @@
             margin-bottom: 15px;
         }
 
+        /* Link kapsayıcısı stili */
         div.link-container {
             display: flex;
             flex-direction: column;
@@ -79,13 +64,15 @@
             border-radius: 12px;
             border: 1px solid #3f51b5;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-            position: relative; /* Z-index için */
+            position: relative;
             z-index: 10;
         }
 
+        /* Link (buton) stili */
         a {
             display: block;
             padding: 12px 15px;
+            /* Yatay degrade arka plan */
             background: linear-gradient(90deg, #3f51b5, #6589ff); 
             color: #ffffff;
             text-decoration: none;
@@ -93,12 +80,14 @@
             font-weight: 600;
             text-align: center;
             letter-spacing: 0.5px;
+            /* Tüm geçişler için yumuşaklık ayarı */
             transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; 
         }
 
         a:hover {
+            /* Hover anında renk değişimi */
             background: linear-gradient(90deg, #6589ff, #3f51b5); 
-            transform: translateY(-2px);
+            transform: translateY(-2px); /* Hafif yukarı kalkma efekti */
             box-shadow: 0 5px 15px rgba(63, 81, 181, 0.7); 
         }
         
@@ -111,7 +100,7 @@
     </style>
 </head>
 <body>
-    <h1>EDA BAŞAYAR BTE311 WEB TABANLI PROGRAMLAMA DERSİ ÖDEV LİSTESİ</h1>
+    <div id="cursor-glow"></div> <h1>EDA BAŞAYAR BTE311 WEB TABANLI PROGRAMLAMA DERSİ ÖDEV LİSTESİ</h1>
     
     <div class="link-container">
         
@@ -137,5 +126,26 @@
         <a href="web/tablo_olustur.php">PHP Dinamik Tablo Oluştur</a>
         <a href="web/tek_sayilar.php">PHP 1-100 Tek Sayılar</a>
     </div>
+
+    <script>
+        const glowElement = document.getElementById('cursor-glow');
+
+        document.addEventListener('mousemove', (e) => {
+            // İmlecin X ve Y koordinatlarını glow elementine uygular
+            glowElement.style.left = `${e.clientX}px`;
+            glowElement.style.top = `${e.clientY}px`;
+        });
+        
+        // İmleç sayfa dışına çıktığında elementi gizler
+        document.addEventListener('mouseleave', () => {
+            glowElement.style.opacity = 0;
+        });
+
+        // İmleç sayfaya girdiğinde elementi gösterir
+        document.addEventListener('mouseenter', () => {
+            glowElement.style.opacity = 1;
+        });
+        
+    </script>
 </body>
 </html>
