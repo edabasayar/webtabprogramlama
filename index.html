@@ -3,43 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ödev Listesi - EDA BAŞAYAR (Modern)</title>
+    <title>Ödev Listesi - EDA BAŞAYAR (Modern ve Animasyonlu)</title>
     <style>
-        /* Titreşim efekti için anahtar kareler, butonlar üzerinde hafif bir canlılık sağlar */
-        @keyframes pulse-flame {
-            0% { transform: scale(1); box-shadow: 0 0 5px rgba(42, 171, 171, 0.7); } 
-            50% { transform: scale(1.01); box-shadow: 0 0 15px rgba(50, 205, 50, 1); } 
-            100% { transform: scale(1); box-shadow: 0 0 5px rgba(42, 171, 171, 0.7); } 
+        /* YENİ: Tekno Parlama Animasyonu */
+        @keyframes subtle-glow {
+            0% { box-shadow: 0 0 15px #42a5f5; opacity: 0.6; } /* Mavi parlama */
+            50% { box-shadow: 0 0 30px #6589ff; opacity: 0.9; } /* Açık mavi parlama */
+            100% { box-shadow: 0 0 15px #42a5f5; opacity: 0.6; }
         }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            /* Arka plan rengi: Koyu mavi/mor */
             background: #12121e; 
-            color: #e0e0ff; /* Metin rengi */
+            color: #e0e0ff; 
             margin: 0;
             padding: 40px 20px;
             min-height: 100vh;
             text-align: center;
+            overflow-x: hidden; /* Animasyonun taşmasını önlemek için */
+            position: relative; /* ::before/::after konumlandırması için */
+        }
+        
+        /* YENİ: Sol ve Sağ Taraflara Parlama Efektleri */
+        body::before, body::after {
+            content: '';
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%; /* Dairesel şekil */
+            background: rgba(66, 165, 245, 0.2); /* Yarı saydam mavi */
+            z-index: -1; /* İçeriğin arkasında kalmasını sağlar */
+            filter: blur(50px); /* Yoğun bulanıklık */
+            animation: subtle-glow 8s infinite alternate; /* Yavaş ve sürekli animasyon */
         }
 
+        body::before {
+            top: 20%;
+            left: 5%;
+        }
+
+        body::after {
+            bottom: 10%;
+            right: 5%;
+            animation-delay: 2s; /* İki parlama arasında senkronizasyon farkı yaratır */
+        }
+        
+        /* --- Mevcut Stiller --- */
+
         h1 {
-            color: #42a5f5; /* Başlık rengi */
+            color: #42a5f5;
             border-bottom: 3px solid #64b5f6;
             padding-bottom: 15px;
             margin-bottom: 40px;
             font-size: 2.2em;
-            text-shadow: 0 0 8px rgba(66, 165, 245, 0.5); /* Başlık gölgesi */
+            text-shadow: 0 0 8px rgba(66, 165, 245, 0.5);
+            position: relative; /* Z-index için */
+            z-index: 10;
         }
         
         h2 {
-            color: #bdbdbd; /* Başlık alt rengi */
+            color: #bdbdbd;
             font-size: 1.2em;
             margin-top: 5px;
             margin-bottom: 15px;
         }
 
-        /* Tüm bağlantıları içeren ana kutu */
         div.link-container {
             display: flex;
             flex-direction: column;
@@ -47,33 +75,30 @@
             max-width: 650px;
             margin: 0 auto;
             padding: 25px;
-            background-color: #1e1e30; /* Kutu arka planı */
+            background-color: #1e1e30;
             border-radius: 12px;
-            border: 1px solid #3f51b5; /* Kutu çerçevesi */
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); 
+            border: 1px solid #3f51b5;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            position: relative; /* Z-index için */
+            z-index: 10;
         }
 
-        /* Tüm linklerin stil ayarları */
         a {
             display: block;
             padding: 12px 15px;
-            /* Buton degrade rengi */
             background: linear-gradient(90deg, #3f51b5, #6589ff); 
-            color: #ffffff; /* Buton metin rengi */
+            color: #ffffff;
             text-decoration: none;
             border-radius: 6px;
             font-weight: 600;
             text-align: center;
             letter-spacing: 0.5px;
-            
-            /* Yumuşak geçişler */
             transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; 
         }
 
         a:hover {
-            /* Buton üzerine gelindiğinde (hover) stili */
             background: linear-gradient(90deg, #6589ff, #3f51b5); 
-            transform: translateY(-2px); /* Hafif yukarı kalkma efekti */
+            transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(63, 81, 181, 0.7); 
         }
         
