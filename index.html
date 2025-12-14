@@ -3,52 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BTE311 ÖDEV LİSTESİ</title>
+    <title>Ödev Listesi - EDA BAŞAYAR </title>
     <style>
+        /* Ana Animasyon: Hafif Titreşim (Pulse) */
+        @keyframes pulse-flame {
+            0% { transform: scale(1); box-shadow: 0 0 5px rgba(255, 165, 0, 0.7); }
+            50% { transform: scale(1.01); box-shadow: 0 0 15px rgba(255, 100, 0, 1); }
+            100% { transform: scale(1); box-shadow: 0 0 5px rgba(255, 165, 0, 0.7); }
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f7f6; /* Açık gri arka plan */
-            color: #333;
-            margin: 40px;
+            /* Alevli Arka Plan: Koyu Kırmızıdan Koyu Turuncuya degrade */
+            background: linear-gradient(135deg, #1f0101 0%, #3d0500 50%, #1f0101 100%); 
+            color: #fff; /* Beyaz metin rengi */
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+            text-align: center;
         }
 
         h1 {
-            color: #007bff; /* Mavi başlık rengi */
-            border-bottom: 3px solid #007bff;
-            padding-bottom: 10px;
-            margin-bottom: 30px;
-            text-align: center;
+            color: #ffcc00; /* Parlak Sarı */
+            border-bottom: 4px solid #ff4500; /* Parlak Turuncu Alt Çizgi */
+            padding-bottom: 15px;
+            margin-bottom: 40px;
+            font-size: 2.5em;
+            text-shadow: 0 0 10px #ff0000; /* Kırmızı gölge */
+        }
+        
+        h2 {
+            color: #ff9900; /* Turuncu tonu */
+            text-shadow: 0 0 5px #ff4500;
         }
 
-        /* Liste görünümünü düzenleme */
+        /* Liste Kapsayıcı (Ateşin Ortasındaki Meyve Tabağı) */
         div.link-container {
-            display: flex; /* Öğeleri yan yana veya düzenli hizalamak için flex kullanırız */
-            flex-direction: column; /* Öğeleri alt alta sıralar */
-            gap: 10px; /* Öğeler arasına boşluk koyar */
-            max-width: 600px;
-            margin: 0 auto; /* Ortalamak için */
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.05); /* Yarı saydam beyaz */
+            border-radius: 15px;
+            border: 1px solid rgba(255, 165, 0, 0.5); /* Turuncu çerçeve */
+            box-shadow: 0 0 30px rgba(255, 100, 0, 0.8); /* Yoğun parlak gölge */
         }
 
-        /* Bağlantıları buton gibi gösterme */
+        /* Bağlantılar (Alevli Butonlar) */
         a {
-            display: block; /* Bağlantının tüm satırı kaplamasını sağlar */
-            padding: 12px 15px;
-            background-color: #3399ff; /* Mavi buton rengi */
-            color: white;
-            text-decoration: none; /* Alt çizgiyi kaldırır */
-            border-radius: 6px;
-            transition: background-color 0.3s ease; /* Fare üzerine gelince yumuşak geçiş */
+            display: block;
+            padding: 15px 20px;
+            /* Canlı Kırmızıdan Turuncuya Degrade */
+            background: linear-gradient(45deg, #ff4500, #ffa500); 
+            color: #1a1a1a; /* Koyu Metin */
+            text-decoration: none;
+            border-radius: 8px;
             font-weight: bold;
             text-align: center;
+            letter-spacing: 1px;
+            
+            /* Alev Animasyonu */
+            animation: pulse-flame 2s infinite alternate;
+            transition: background 0.3s ease, transform 0.3s ease;
         }
 
         a:hover {
-            background-color: #0077cc; /* Fare üzerine gelince koyu mavi */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            /* Üzerine gelince daha yoğun renk */
+            background: linear-gradient(45deg, #ff0000, #ff8c00); 
+            transform: scale(1.02);
+            box-shadow: 0 0 20px #ff0000;
+        }
+        
+        hr {
+            border: 0;
+            border-top: 2px solid #ff9900;
+            margin: 25px 0;
+            box-shadow: 0 1px 5px #ff9900;
         }
     </style>
 </head>
@@ -56,25 +88,27 @@
     <h1>EDA BAŞAYAR BTE311 WEB TABANLI PROGRAMLAMA DERSİ ÖDEV LİSTESİ</h1>
     
     <div class="link-container">
+        
+        <h2 style="margin-top: 0;">HTML & CSS Ödevleri</h2>
         <a href="dersprogramıtablo.html">Ders Programı (HTML Tablo)</a>
+        <a href="ders_programı_inline.html">İnline Ders Programı</a>
         <a href="icice_tablo.html">İç İçe Tablo</a>
-         <a href="ders_programı_inline.html">İnline Ders Programı</a>
         <a href="testsınavformu.html">Test Sınav Formu</a>
         <a href="uyelikformu.html">Üyelik Formu</a>
         <a href="deneme.html">Ders Denemeleri</a>
-        <a href="animasyon.html">Animasyon zıplayan dönen renkli toplar</a>
-        <a href="poster.html">6-6 resimli açıklama</a>
-        <a href="rasgele_resim.html">Rasgele Resim-Değişen Arka Plan</a>
+        <a href="animasyon.html">Animasyon (Zıplayan Dönen Renkli Toplar)</a>
+        <a href="poster.html">Poster (6x6 Resimli Açıklama)</a>
+        <a href="rasgele_resim.html">Rasgele Resim - Değişen Arka Plan</a>
         <a href="oyun/index.html">Oyun</a>
         <a href="benim_oyunum/index.html">Değiştirilmiş Oyun</a>
         <a href="venn_semasi.html">Venn Şeması</a>
         
-        <hr style="border: 0; border-top: 1px solid #ccc; margin: 15px 0;">
-        <h2 style="color: #007bff; font-size: 1.2em; text-align: center;">PHP Uygulamaları</h2>
+        <hr>
         
+        <h2>PHP Uygulamaları</h2>
         <a href="web/giris.php">PHP Giriş (Şifre Uygulaması)</a>
-        <a href="web/tablo_olustur.php">PHP Dinamik Tablo Oluştur</a>
         <a href="web/tablo_formu.html">PHP Dinamik Tablo Formu</a>
+        <a href="web/tablo_olustur.php">PHP Dinamik Tablo Oluştur</a>
         <a href="web/tek_sayilar.php">PHP 1-100 Tek Sayılar</a>
     </div>
 </body>
