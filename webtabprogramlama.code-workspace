@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../../Applications/XAMPP/xamppfiles/htdocs/web"
+		},
+		{
+			"path": "../Desktop/weather-app-mac"
+		},
+		{
+			"path": "../weather-app-mac"
+		}
+	],
+	"settings": {}
+}
