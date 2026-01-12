@@ -1,0 +1,68 @@
+/* Sayfa Düzeni - Tüm sayfanın genel yerleşim ayarları */
+body {
+  margin: 0; /* Sayfa kenarlarındaki varsayılan boşlukları sıfırlar. */
+  display: flex; /* İçeriği esnek bir kutu modeline alır. */
+  justify-content: center; /* İçeriği yatayda tam ortaya hizalar. */
+  align-items: center; /* İçeriği dikeyde tam ortaya hizalar. */
+  min-height: 100vh; /* Sayfanın yüksekliğini ekranın %100'üne eşitler (Kartın ortada durmasını sağlar). */
+  background-color: #121212; /* Arka planı koyu bir tema yapar. */
+  font-family: 'Poppins', sans-serif; /* Modern ve okunaklı bir yazı tipi belirler. */
+}
+
+.container {
+  padding-top: 80px; /* Header'ın alanı kadar kartı aşağı iter */
+}
+
+/* Ana Kart Yapısı - Hava durumu bilgilerini tutan beyaz kutu/kart tasarımı */
+.weather-card {
+  width: 360px; /* Kartın sabit genişliği. */
+  padding: 40px 30px; /* Kartın içindeki öğelerin kenarlara yapışmasını engelleyen iç boşluk. */
+  border-radius: 30px; /* Kartın köşelerini ovalleştirir. */
+  text-align: center; /* Kart içindeki tüm metinleri ortalar. */
+  color: white; /* Varsayılan metin rengini beyaz yapar. */
+  box-shadow: 0 25px 50px rgba(0,0,0,0.5); /* Karta derinlik hissi veren gölge ekler. */
+  transition: all 0.8s ease; /* Renk değişimleri arasındaki geçişi yumuşatır (0.8 saniye). */
+}
+
+/* Dinamik Temalar - Hava durumuna göre değişen arka plan renkleri */
+.sunny { background: linear-gradient(135deg, #f6d365 0%, #fda085 100%); } /* Güneşli: Sarı/Turuncu geçiş. */
+.cloudy { background: linear-gradient(135deg, #30cfd0 0%, #330867 100%); } /* Bulutlu: Turkuaz/Mor geçiş. */
+.rainy { background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); } /* Yağmurlu: Koyu mavi geçiş. */
+.snowy { background: linear-gradient(135deg, #e6e9f0 0%, #dae6f6 100%); color: #222 !important; } /* Karlı: Açık gri/beyaz (Yazı rengi siyah olur). */
+.default { background: #434343; } /* Tanımlanmamış durumlar için düz koyu gri. */
+
+/* Arama Kutusu - Input ve butonun yan yana durduğu alan */
+.search-box { display: flex; gap: 10px; margin-bottom: 30px; } /* Ögeler arası 10px boşluk bırakır. */
+.search-box input {
+  flex: 1; /* Input'un mevcut boşluğun tamamını kaplamasını sağlar. */
+  padding: 12px; /* Yazı yazılan alanın iç genişliği. */
+  border-radius: 12px; /* Köşeleri yuvarlar. */
+  border: none; /* Kenar çizgisini kaldırır. */
+  outline: none; /* Tıklandığında çıkan dış çerçeveyi iptal eder. */
+}
+.search-box button {
+  padding: 10px 20px; 
+  border-radius: 12px; 
+  border: none; 
+  background: rgba(255,255,255,0.2); /* Yarı şeffaf beyaz arka plan. */
+  color: rgb(108, 67, 169); 
+  cursor: pointer; /* Üzerine gelindiğinde el işareti çıkar. */
+  font-weight: bold;
+}
+
+/* Animasyonlar - İkonların hareket etmesini sağlayan kodlar */
+.main-icon { font-size: 100px; margin: 20px 0; display: inline-block; }
+
+.animate-spin-slow { animation: spin 10s linear infinite; } /* 10 saniyede bir tam tur döner. */
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+.animate-bounce-slow { animation: bounce 2s infinite; } /* 2 saniyede bir aşağı yukarı zıplar. */
+@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+
+/* Yazılar - Metinlerin boyut ve kalınlık ayarları */
+.temp-display { font-size: 5rem; margin: 0; font-weight: 800; } /* Büyük derece gösterimi. */
+.city-name { font-size: 2rem; margin: 10px 0; } /* Şehir ismi. */
+.weather-desc { letter-spacing: 3px; font-weight: 300; opacity: 0.9; } /* Harfler arası boşluklu açıklama. */
+.details-row { display: flex; justify-content: space-around; margin-top: 30px; font-size: 0.9rem; } /* Nem ve rüzgar yan yana. */
+.status-msg { margin-top: 20px; font-weight: 600; } /* Bilgi mesajları. */
+.error-text { color: #ff5252; background: rgba(0,0,0,0.1); padding: 10px; border-radius: 10px; } /* Hata mesajı tasarımı. */
